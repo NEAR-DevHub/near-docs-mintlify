@@ -1,11 +1,15 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
-  "name": "Trezu Docs",
+  "theme": "maple",
+  "name": "NEAR Docs",
   "colors": {
-    "primary": "#0953FF",
-    "light": "#55D799",
-    "dark": "#0D9373"
+    "primary": "#3b82f6",
+    "light": "#3b82f6",
+    "dark": "#3b82f6"
+  },
+  "logo": {
+    "light": "/assets/near_logo.svg",
+    "dark": "/assets/near_logo_white.svg"
   },
   "favicon": "assets/favicon.svg",
   "navigation": {
@@ -119,9 +123,5 @@
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/assets/menu/logo-light.svg",
-    "dark": "/assets/menu/logo-dark.svg"
   }
 }
