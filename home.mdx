@@ -1,23 +1,141 @@
 ---
-title: Welcome to Trezu
-description: "The DAO treasury management platform built on NEAR"
+title: NEAR Protocol Documentation
+description: "Build decentralized applications on NEAR — fast, scalable, and developer-friendly"
+mode: wide
 ---
 
-## What is Trezu?
+<div style={{ textAlign: 'center', padding: '3rem 1rem 2rem' }}>
+  <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>
+    Welcome to NEAR Docs
+  </h1>
+  <p style={{ fontSize: '1.125rem', color: '#6b7280', maxWidth: '600px', margin: '0 auto 2rem' }}>
+    Everything you need to build, deploy, and scale on the NEAR Protocol.
+  </p>
+  <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <a href="/protocol/basics" style={{ background: '#3b82f6', color: '#fff', padding: '0.6rem 1.4rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>Get Started</a>
+    <a href="/tutorials/auction/0-intro" style={{ border: '1px solid #d1d5db', color: 'inherit', padding: '0.6rem 1.4rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>View Tutorials</a>
+  </div>
+</div>
 
-Trezu is a treasury management platform for DAOs built on NEAR Protocol. It enables decentralized organizations to manage funds, coordinate payments, and govern financial decisions transparently and securely.
+---
 
-<CardGroup cols={2}>
-  <Card title="Governance" icon="users" href="/governance/members-and-roles">
-    Manage members, roles, voting settings, and handle governance requests.
+## Explore the Docs
+
+<Columns cols={3}>
+  <Card title="NEAR Protocol" icon="layers" href="/protocol/basics" img="/assets/docs/welcome-pages/1.near-protocol.png">
+    Learn how NEAR works — accounts, access keys, transactions, gas, and the runtime.
   </Card>
-  <Card title="Payments" icon="money-bill" href="/payments/single-payment">
-    Send single or bulk payments and handle payment requests.
+  <Card title="Multi-Chain" icon="link" href="/chain-abstraction/what-is" img="/assets/docs/welcome-pages/2.chain-abstraction.png">
+    Sign transactions on any chain from a NEAR account using Chain Signatures and Intents.
   </Card>
-  <Card title="Swap" icon="arrows-rotate" href="/swap">
-    Swap tokens directly from your DAO treasury.
+  <Card title="Primitives" icon="blocks" href="/primitives/what-is" img="/assets/docs/welcome-pages/5.primitives.png">
+    Build with fungible tokens, NFTs, DAOs, DEXes, liquid staking, and more.
   </Card>
-  <Card title="Concepts" icon="book" href="/protocol/basics">
-    Learn about NEAR Protocol concepts powering Trezu.
+</Columns>
+
+---
+
+## Core Concepts
+
+<Columns cols={2}>
+  <Card title="Accounts & Access Keys" icon="key" href="/protocol/account-model">
+    NEAR uses human-readable account IDs and a flexible key system that separates signing permissions.
   </Card>
-</CardGroup>
+  <Card title="Transactions & Gas" icon="zap" href="/protocol/transactions">
+    Understand how actions are bundled into transactions and how fees are calculated.
+  </Card>
+  <Card title="Data Flow" icon="workflow" href="/protocol/data-flow/near-data-flow">
+    Trace how data moves through the NEAR network from transaction submission to finality.
+  </Card>
+  <Card title="Storage Staking" icon="database" href="/protocol/storage/storage-staking">
+    Learn how contracts pay for on-chain storage and how to optimize costs.
+  </Card>
+</Columns>
+
+---
+
+## Tokens & Primitives
+
+<Columns cols={3}>
+  <Card title="Fungible Tokens" icon="coins" href="/primitives/ft/ft">
+    Deploy and interact with NEP-141 compliant FT contracts.
+  </Card>
+  <Card title="Non-Fungible Tokens" icon="image" href="/primitives/nft/nft">
+    Mint and manage NFTs with the NEP-171 standard.
+  </Card>
+  <Card title="Linkdrops" icon="gift" href="/primitives/linkdrop/linkdrop">
+    Drop NEAR, FTs, or NFTs claimable through a simple link.
+  </Card>
+  <Card title="Liquid Staking" icon="trending-up" href="/primitives/liquid-staking/liquid-staking">
+    Stake NEAR and receive a liquid token representing your position.
+  </Card>
+  <Card title="DAOs" icon="users" href="/primitives/dao">
+    Govern protocols and treasuries with on-chain decentralized organizations.
+  </Card>
+  <Card title="DEXes" icon="arrow-left-right" href="/primitives/dex">
+    Integrate decentralized exchange protocols into your applications.
+  </Card>
+</Columns>
+
+---
+
+## Multi-Chain
+
+<Columns cols={2}>
+  <Card title="Chain Signatures" icon="pen-tool" href="/chain-abstraction/chain-signatures" img="/assets/docs/welcome-pages/7.discover.png">
+    Use a NEAR account to sign transactions on Bitcoin, Ethereum, Solana, and beyond.
+  </Card>
+  <Card title="Omnibridge" icon="bridge" href="/chain-abstraction/omnibridge/overview" img="/assets/docs/welcome-pages/6.data-infrastructure.png">
+    Bridge assets natively across chains without wrapping or custodians.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Intents" icon="sparkles" href="/chain-abstraction/intents/overview">
+    Express desired outcomes and let solvers compete to fulfill them optimally.
+  </Card>
+  <Card title="Meta Transactions" icon="shield" href="/chain-abstraction/meta-transactions">
+    Enable gasless transactions by relaying signed messages on behalf of users.
+  </Card>
+</Columns>
+
+---
+
+## Tutorials
+
+<Columns cols={2}>
+  <Card title="Auction Tutorial" icon="gavel" href="/tutorials/auction/0-intro">
+    Build a full auction contract step by step — from basic bidding to frontend and factory deployment.
+  </Card>
+  <Card title="Multichain DAO" icon="globe" href="/tutorials/multichain-dao/0-intro">
+    Learn how a single NEAR vote can execute actions across multiple EVM chains.
+  </Card>
+</Columns>
+
+<Columns cols={3}>
+  <Card title="FT Zero to Hero" icon="coins" href="/tutorials/fts">
+    Build a fully-featured fungible token contract from scratch.
+  </Card>
+  <Card title="NFT Zero to Hero" icon="image" href="/tutorials/nfts">
+    Mint NFTs and build a complete NFT contract step by step.
+  </Card>
+  <Card title="Cross-Contract Calls" icon="arrow-right-left" href="/tutorials/examples/xcc">
+    Learn to call other contracts and compose on-chain logic.
+  </Card>
+</Columns>
+
+---
+
+## Network
+
+<Columns cols={3}>
+  <Card title="Validators" icon="server" href="/protocol/network/validators">
+    Learn how validators secure the network and how to become one.
+  </Card>
+  <Card title="Networks & Testnets" icon="globe" href="/protocol/network/networks">
+    Understand mainnet, testnet, and localnet environments.
+  </Card>
+  <Card title="Staking" icon="lock" href="/protocol/network/staking">
+    Delegate or stake directly to support network security.
+  </Card>
+</Columns>
