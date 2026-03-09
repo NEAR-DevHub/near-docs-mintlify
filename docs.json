@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "almond",
   "name": "NEAR Docs",
   "colors": {
     "primary": "#3b82f6",
@@ -20,9 +20,6 @@
   "appearance": {
     "default": "system",
     "strict": false
-  },
-  "background": {
-    "decoration": "gradient"
   },
   "styling": {
     "eyebrows": "breadcrumbs",
@@ -58,13 +55,23 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "NEAR Protocol",
-        "icon": "layers",
+        "tab": "Welcome",
+        "hidden": true,
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "home"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Protocol",
         "groups": [
           {
             "group": "Getting Started",
             "pages": [
-              "home",
               "protocol/basics",
               "tutorials/protocol/create-account"
             ]
@@ -137,7 +144,7 @@
       },
       {
         "tab": "Multi-Chain",
-        "icon": "link",
+
         "groups": [
           {
             "group": "Overview",
@@ -193,7 +200,7 @@
       },
       {
         "tab": "AI and Agents",
-        "icon": "bot",
+
         "groups": [
           {
             "group": "Overview",
@@ -257,7 +264,7 @@
       },
       {
         "tab": "Smart Contracts",
-        "icon": "code",
+
         "groups": [
           {
             "group": "Getting Started",
@@ -371,7 +378,7 @@
       },
       {
         "tab": "App Development",
-        "icon": "monitor",
+
         "groups": [
           {
             "group": "Getting Started",
@@ -436,7 +443,7 @@
       },
       {
         "tab": "Tokens & Primitives",
-        "icon": "blocks",
+
         "groups": [
           {
             "group": "Primitives",
@@ -505,7 +512,7 @@
       },
       {
         "tab": "Data Infrastructure",
-        "icon": "database",
+
         "groups": [
           {
             "group": "Overview",
@@ -549,7 +556,7 @@
       },
       {
         "tab": "EVM Developers",
-        "icon": "gem",
+
         "href": "https://doc.aurora.dev"
       }
     ]
