@@ -22,7 +22,7 @@ The client can then generate a `SignedDelegateAction` (a signed message that has
 
 ## Relayer (server)
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
 <Tab title="near-api-js">
 
@@ -34,7 +34,7 @@ You can easily get the account object used to send the transactions from its pri
 
 <Github language='typescript' url='https://github.com/SurgeCode/near-relay-example/blob/main/util.ts' start='5' end='17'/>
 
-:::info
+<Info>
 
  The code in the example only works from the following versions onwards
 
@@ -44,7 +44,7 @@ You can easily get the account object used to send the transactions from its pri
 "@near-js/accounts": "1.0.4"
 ```
 
-:::
+</Info>
 
 </Tab>
 
@@ -66,7 +66,7 @@ If you're interested in relaying account creation as well, it's quite straightfo
 
 ## Client
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
 <Tab title="near-api-js">
 
@@ -199,7 +199,8 @@ You can follow these steps to set up your local Relayer server development envir
 6. Run the server using `cargo run`.
    > **(OPTIONAL)** To run with logs (tracing) enabled run `RUST_LOG=tower_http=debug cargo run`
 
-:::info Optional setup
+<Info> 
+Optional setup
 
 If you're integrating with [FastAuth](fastauth-sdk) make sure to enable feature flags:
 ```text
@@ -210,7 +211,7 @@ If you're using shared storage, make sure to enable feature flags:
 cargo build --features shared_storage
 ```
 
-:::
+</Info>
 
 ### Redis Setup
 

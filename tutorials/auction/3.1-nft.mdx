@@ -13,7 +13,7 @@ No one will enter an auction if there's nothing to win, so let's add a prize. Wh
 
 When we create an auction we need to list the NFT. To specify which NFT is being auctioned off we need the account ID of the NFT contract and the token ID of the NFT. We will specify these when the contract is initialized; amend `init` to add `nft_contract` and `token_id` as such:  
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -41,7 +41,7 @@ When we create an auction we need to list the NFT. To specify which NFT is being
 
 When the method `claim` is called the NFT needs to be transferred to the highest bidder. Operations regarding NFTs live on the NFT contract, so we make a cross-contract call to the NFT contract telling it to swap the owner of the NFT to the highest bidder. The method on the NFT contract to do this is `nft_transfer`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -84,7 +84,7 @@ In our contract, we perform no checks to verify whether the contract actually ow
 
 Since we are now dealing with more information in our contract, instead of implementing a function to display each field we'll create a function to display the entire contract object. Since the contract doesn't include large complex data structures like a map displaying the contract state in its entirety is easily done.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -118,7 +118,7 @@ In our tests folder, we need the WASM for an NFT contract. For this tutorial, we
 
 To deploy the NFT contract, this time we're going to use `dev deploy` which creates an account with a random ID and deploys the contract to it by specifying the path to the WASM file. After deploying we will initialize the contract with default metadata and specify an account ID which will be the owner of the NFT contract (though the owner of the NFT contract is irrelevant in this example). Default metadata sets information such as the name and symbol of the NFT contract to default values.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -144,7 +144,7 @@ To deploy the NFT contract, this time we're going to use `dev deploy` which crea
 
 To start a proper auction the auction contract should own an NFT. To do this the auction account calls the NFT contract to mint a new NFT providing information such as the image for the NFT.  
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -170,7 +170,7 @@ To start a proper auction the auction contract should own an NFT. To do this the
 
 After `claim` is called, the test should verify that the auction winner now owns the NFT. This is done by calling `nft_token` on the NFT contract and specifying the token ID which will return the account ID that the token belongs to.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 

@@ -21,7 +21,7 @@ Here you can make a call to the `token.primitives.testnet` by filling out the fo
 
 Here is how to directly interact with the factory contract through your application:
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
     ```js
@@ -83,7 +83,7 @@ On initialization, you will define the token's metadata such as its name (e.g. E
 
 To initialize a FT contract you will need to deploy it and then call the `new` method defining the token's metadata.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
 
     ```bash
@@ -114,7 +114,7 @@ To initialize a FT contract you will need to deploy it and then call the `new` m
 
 You can deploy a new Fungible Token using our global FT contract - a pre-deployed [standard FT contract](https://github.com/near-examples/FT) that you can reuse. [Global contracts](../../smart-contracts/global-contracts) are deployed once and can be reused by any account without incurring high storage costs.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="By Account">
 
     ```bash
@@ -152,7 +152,7 @@ Deploying by **hash** creates an immutable contract that never changes. Deployin
 ## Querying Metadata
 You can query the FT's metadata by calling the `ft_metadata`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   ```js
@@ -223,7 +223,7 @@ You can query the FT's metadata by calling the `ft_metadata`.
 ## Checking Balance
 To know how many coins a user has you will need to query the method `ft_balance_of`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   <Info>
@@ -286,7 +286,7 @@ In order for a user to own and transfer tokens they need to first **register** i
 
 By calling this `storage_deposit` the user can register themselves or **register other users**.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   ```js
@@ -333,7 +333,7 @@ After a user calls the `storage_deposit` the FT will appear in their Wallets.
 ## Transferring Tokens
 To send FT to another account you will use the `ft_transfer` method, indicating the receiver and the amount of FT you want to send.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
     
   ```js
@@ -410,7 +410,7 @@ This means that, instead of you attaching tokens directly to the call, you ask t
 
 Let's assume that you need to deposit FTs on [Ref Finance](https://rhea.finance/).
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   ```js
@@ -523,7 +523,7 @@ _Note: The [`near_contract_standards::fungible_token::receiver`](https://docs.rs
 
 While the FT standard does not define a `burn` method, you can simply transfer tokens to an account that no one controls, such as [`0000000000000000000000000000000000000000000000000000000000000000`](https://nearblocks.io/es/address/0000000000000000000000000000000000000000000000000000000000000000) (64 zeros).
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
     
   ```js

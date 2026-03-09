@@ -13,7 +13,7 @@ To further develop this contract we will introduce another primitive: [fungible 
 
 We want to only accept bids in one type of fungible token; accepting many different FTs would make the value of each bid difficult to compare. We're also going to adjust the contract so that the auctioneer can specify a starting bid amount for the auction.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -43,7 +43,7 @@ When we were making bids in `$NEAR` tokens we would call the auction contract di
 
 The `ft_on_transfer` method always has the same interface; the FT contract will pass it the `sender`, the `amount` of FTs being sent and a `msg` which can be empty (which it will be here) or it can contain some information needed by the method (if you want to send multiple arguments in msg it is best practice to deliver this in JSON then parse it in the contract). The method returns the number of tokens to refund the user, in our case we will use all the tokens attached to the call for the bid unless the contract panics in which case the user will automatically be refunded their FTs in full.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -65,7 +65,7 @@ The `ft_on_transfer` method always has the same interface; the FT contract will 
 
 We need to confirm that the user is attaching fungible tokens when calling the method and that they are using the right FT, this is done by checking the predecessor's account ID. Since it's the FT contract that directly calls the auction contract, the `predecessor` is now the account ID of the FT contract.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -87,7 +87,7 @@ We need to confirm that the user is attaching fungible tokens when calling the m
 
 The bidder's account ID is now given by the argument `sender_id` and the bid amount is passed as an argument named `amount`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -109,7 +109,7 @@ The bidder's account ID is now given by the argument `sender_id` and the bid amo
 
 When we want to return the funds to the previous bidder we now make a cross-contract call to the FT contract. 
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -159,7 +159,7 @@ When we want to return the funds to the previous bidder we now make a cross-cont
 
 When the auction is complete we need to send the fungible tokens to the auctioneer when we send the NFT to the highest bidder, we implement a similar call as when we were returning the funds just changing the arguments.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -189,7 +189,7 @@ Just as with the NFT contract, we will deploy an FT contract in the sandbox test
 
 When the contract is deployed it is initialized with `new_default_meta` which sets the token's metadata, including things like its name and symbol, to default values while requiring the owner (where the token supply will sent), and the total supply of the token.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -217,7 +217,7 @@ For one to receive fungible tokens, first their account ID must be [registered](
 
 In our tests, since we are creating a new fungible token and new accounts we will actually have to register every account that will interact with FTs.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -243,7 +243,7 @@ In our tests, since we are creating a new fungible token and new accounts we wil
 
 Then we will transfer the bidders FTs so they can use them to bid. A simple transfer of FTs is done using the method `ft_transfer` on the FT contract.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -272,7 +272,7 @@ Then we will transfer the bidders FTs so they can use them to bid. A simple tran
 
 As stated previously, to bid on the auction the bidder now calls `ft_transfer_call` on the FT contract which subsequently calls the auction contract's `ft_on_transfer` method with fungible tokens attached.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -301,7 +301,7 @@ As stated previously, to bid on the auction the bidder now calls `ft_transfer_ca
 
 Previously, to check a user's `$NEAR` balance, we pulled the details from their account. Now we are using FTs we query the balance on the FT contract using `ft_balance_of`, let's check that the contract's balance increased by the bid amount and the user's balance decreased by the bid amount.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -332,7 +332,7 @@ If we make a lower bid than the previous this will cause the auction contract to
 
 Previous to this, Bob made a bid of 60,000 and Alice was returned her bid bringing her balance back up to 150,000. Now when Alice makes an invalid of 50,000 Alice's balance should remain at 150,000 and the contract should remain at a balance of 60,000.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -378,7 +378,7 @@ When creating an application there are numerous ways to structure it. Here, we h
 
 In such case, the Contract struct would be a map of auctions. We would implement a method to create a new auction by adding an entry to the map with the specific details of that individual auction.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 

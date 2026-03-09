@@ -22,7 +22,7 @@ In order to create any kind of drop, you need to first generate key pairs. You w
 - The `linkdrop` contract will store the **`public`** part of the key.
 - You will give the `private` part of the key to the user you want to receive the drop.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
     ```js
@@ -59,7 +59,7 @@ To create a `$NEAR` drop you will ask the contract to create a drop (`create_dro
 
 The contract will create a drop and **return the numerical ID** that identifies it.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js
@@ -120,7 +120,7 @@ To create an NFT drop, you will call the `create_drop` method, now passing a `nf
 
 The contract will then create a drop and **return the numerical ID** that identifies it.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js
@@ -170,7 +170,7 @@ near call v2.keypom.near create_drop '{"public_keys": <PUBLIC_KEYS>, "deposit_pe
 
 Having the Drop ID, you now need to transfer the NFT to the linkdrop contract, specifying to which drop you want to add it.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js
@@ -233,7 +233,7 @@ To create a FT drop you will call the `create_drop` method, now passing a `ftDat
 
 The contract will then create a drop and **return the numerical ID** that identifies it.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js
@@ -289,7 +289,7 @@ Having the Drop ID, you now need to transfer the fungible tokens to the linkdrop
 To transfer FTs to an account, you need to first [register](./ft#registering-a-user) the receiver account (e.g. the keypom contract) on the FT contract.
 </Note>
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js
@@ -343,7 +343,7 @@ Linkdrop contracts allow to create `function call` drops. These drops will execu
 Function call drops can be thought as the abstract version of other drops: you can create a drop that will mint an NFT, register a user in a DAO, or pay for a service.
 </Tip>
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
 ```js

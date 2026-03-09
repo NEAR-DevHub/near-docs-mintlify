@@ -13,7 +13,7 @@ Wanting to use Non-Fungible Tokens (NFT) in your dApp? Here you will find all th
 
 If you want to deploy your own NFT contract, you can create one using our [reference implementation](https://github.com/near-examples/NFT).
 
-<Tabs groupId="code-tabs">
+<Tabs>
  <Tab title="🖥️ CLI">
 
   ```bash
@@ -30,7 +30,7 @@ If you want to deploy your own NFT contract, you can create one using our [refer
 
 You can deploy a new Non-Fungible Token using our global NFT contract - a pre-deployed [standard NFT contract](https://github.com/near-examples/NFT) that you can reuse. [Global contracts](../../smart-contracts/global-contracts) are deployed once and can be reused by any account without incurring high storage costs.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="By Account">
 
     ```bash
@@ -78,7 +78,7 @@ Use the [NEAR NFT Minting Tool](https://near.org/near/widget/ComponentDetailsPag
 
 Here is how to directly interact with the factory contract through your application:
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
     
   ```js
@@ -195,7 +195,7 @@ You might have noticed that one of the parameters is a structure called royaltie
 ## Querying NFT data
 You can query the NFT's information and metadata by calling the `nft_token`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   ```js
@@ -346,7 +346,7 @@ Transferring an NFT can happen in two scenarios: (1) you ask to transfer an NFT,
 
 In both cases, it is necessary to invoke the `nft_transfer` method, indicating the token id, the receiver, and an (optionally) an [approval_id](https://github.com/near/NEPs/tree/master/neps/nep-0178).
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
       
   ```js
@@ -424,7 +424,7 @@ In both cases, it is necessary to invoke the `nft_transfer` method, indicating t
 ## Attaching NFTs to a Call
 Natively, only NEAR tokens (Ⓝ) can be attached to a function calls. However, the NFT standard enables to attach a non-fungible tokens in a call by using the NFT-contract as intermediary. This means that, instead of you attaching tokens directly to the call, you ask the NFT-contract to do both a transfer and a function call in your name.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
 
 ```bash
@@ -468,7 +468,7 @@ The `nft_on_transfer` **must return true** if the NFT has to be **returned to th
 
 You can authorize other users to transfer an NFT you own. This is useful, for example, to enable listing your NFT in a marketplace. In such scenario, you **trust** that the marketplace will only transfer the NFT upon receiving a certain amount of money in exchange.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
   
     ```bash
@@ -496,7 +496,7 @@ If the `msg` parameter is included, then a cross-contract call will be made to `
 
 While the NFT standard does not define a `burn` method, you can simply transfer tokens to an account that no one controls, such as [`0000000000000000000000000000000000000000000000000000000000000000`](https://nearblocks.io/es/address/0000000000000000000000000000000000000000000000000000000000000000) (64 zeros).
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
       
   ```js

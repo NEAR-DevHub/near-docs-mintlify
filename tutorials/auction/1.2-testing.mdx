@@ -22,7 +22,7 @@ Unit tests are built into the language and are used to test the contract functio
 
 The first thing our test does is to create multiple accounts with 10 `$NEAR` tokens each and deploy the contract to one of them.
 
-<Tabs groupId="code-tabs">
+<Tabs>
     <Tab title="🌐 JavaScript">
         <Github fname="main.ava.js" language="javascript"
                 url="https://github.com/near-examples/auctions-tutorial/blob/main/contract-ts/01-basic-auction/sandbox-test/main.ava.js#L12-L23"
@@ -46,7 +46,7 @@ The first thing our test does is to create multiple accounts with 10 `$NEAR` tok
 
 To initialize, the contract's account calls itself, invoking the `init` function with an `end_time` set to 60 seconds in the future.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -94,7 +94,7 @@ Now that the contract is deployed and initialized, we can start bidding and chec
 
 We first make `alice` place a bid of 1 NEAR, and check that the contract correctly registers the bid. Then, we have `bob` place a bid of 2 NEAR, and check that the highest bid is updated, and that `alice` gets her NEAR refunded.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -123,7 +123,7 @@ You might be tempted to check if `alice`'s balance is exactly 10 NEAR after she 
 
 When testing we should also check that the contract does not allow invalid calls. The next part checks that the contract doesn't allow for bids with fewer `$NEAR` tokens than the previous to be made.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 
@@ -150,7 +150,7 @@ The sandbox allows us to fast-forward time, which is useful for testing the cont
 
 After which the auction can now be claimed. Once claimed the test checks that the auctioneer has received the correct amount of `$NEAR` tokens.
 
-<Tabs groupId="code-tabs">
+<Tabs>
     <Tab title="🌐 JavaScript">
 
         <Github fname="main.ava.js" language="javascript"
@@ -175,7 +175,7 @@ If you review the tests in full you'll see that we also test other invalid calls
 
 Now that we understand what we are testing, let's go ahead and run the tests!
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
     <Tab title="🌐 JavaScript">
 

@@ -26,7 +26,7 @@ Please check their [docs](https://guide.rhea.finance/) for more information.
 ## Query Token Exchange Rate
 One can query the exchange rate of a token pair by calling the `get-token-price` method on the DEX contract.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
     ```js
@@ -61,7 +61,7 @@ One can query the exchange rate of a token pair by calling the `get-token-price`
 ## Query Whitelisted Tokens
 Anyone list tokens for sale in the DEX. This is why, in order to protect users, the DEX contract has a list of whitelisted tokens that can be traded.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
 
 ```bash
@@ -109,7 +109,7 @@ near view v2.ref-finance.near get_whitelisted_tokens
 ## Register in the DEX
 In order to use the contract, make sure to register your account in the DEX by paying for the storage you will use in order to keep track of your balances.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
 
 ```bash
@@ -129,7 +129,7 @@ near call v2.ref-finance.near storage_deposit '' --useAccount <account> --amount
 
 In order to swap tokens, one must first deposit tokens into the DEX. For this, you will need to transfer the FT you want to swap to the DEX contract.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🖥️ CLI">
 
 ```bash
@@ -156,7 +156,7 @@ This will mint `wrap.near` for you, which you can then transfer to Ref Finance.
 
 Query your deposit balances by calling the `get_deposits` method:
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
     
   ```js
@@ -270,7 +270,7 @@ Query your deposit balances by calling the `get_deposits` method:
 
 DEXs work by having multiple pools of token pairs (e.g. NEAR-USDC) that users can deposit tokens into.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
   ```js
@@ -450,7 +450,7 @@ DEXs work by having multiple pools of token pairs (e.g. NEAR-USDC) that users ca
 ## Swap tokens
 In order to swap a token for another, you need to [have funds](#deposit-funds), and there needs to [**exist a pool**](#query-pools) that has **both tokens** on it.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="🌐 WebApp">
 
     ```js

@@ -29,7 +29,7 @@ To get started we'll clone the [tutorial's repository](https://github.com/near-e
 
 Navigate to the folder of the language you prefer, and then to the `01-basic-auction` folder.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 
@@ -66,7 +66,7 @@ The repository also contains a frontend application that interacts with the cont
 
 The contract allows users to place bids using `$NEAR` tokens and keeps track of the highest bidder. Lets start by looking at how we define the contract's state, this is, the data that the contract will store.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 
@@ -130,7 +130,7 @@ You can read more about the contract's structure and the type of data it can sto
 
 Lets now take a look at the initialization function, which we need to call to determine the time at which the auction will end.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 
@@ -183,7 +183,7 @@ You can read more about the contract's interface in our [contract functions docu
 
 The contract implements four functions to give access to its stored data, i.e. the highest bid so far (the amount and by whom), the time at which the auction ends, the auctioneer, and whether the auction has been claimed.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 
@@ -224,7 +224,7 @@ An auction is not an auction if you can't place a bid! For this, the contract in
 
 The function is quite simple: it verifies if the auction is still active and compares the attached deposit with the current highest bid. If the bid is higher, it updates the `highest_bid` and refunds the previous bidder.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 
@@ -279,7 +279,7 @@ You can read more about the environment variables, payable functions and which a
 
 You'll notice that the contract has a final function called `claim`, this allows the auctioneer to claim the funds from the contract at the end of the auction. Since, on NEAR, a smart contract account and user account are the same, contracts can still have keys when they are deployed, thus a user could just claim the funds from the contract via a wallet. However, this presents a security issue since by having a key the key holder can take the funds from the contract at any point, maliciously change the contract's state or just delete the contract as a whole. By implementing a `claim` function we can later lock the contract by removing all access keys and have the auctioneer claim the funds via preset conditions via code.
 
-<Tabs groupId="code-tabs">
+<Tabs>
 
   <Tab title="🌐 JavaScript">
 

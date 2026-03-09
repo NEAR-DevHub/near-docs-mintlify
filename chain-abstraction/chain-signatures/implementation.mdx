@@ -65,7 +65,7 @@ The `networkId` and `contractId` are set to the values specified in the previous
 
 To interact with a specific chain, you need to instantiate the relevant `chainAdapter`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="Ξ EVM">
     <Github language="js"
       url="https://github.com/near-examples/near-multichain/blob/main/src/components/EVM/EVM.jsx#L40-L47" start="40" end="47" />
@@ -76,7 +76,7 @@ To interact with a specific chain, you need to instantiate the relevant `chainAd
   To use different EVM networks, simply specify the RPC URL for your desired network.
   The example demonstrates compatibility with multiple EVM-compatible networks including Ethereum, Base, BNB Chain, Avalanche, Polygon, Arbitrum, zkSync, and many others.
   You can find RPC URLs for various networks at [ChainList](https://chainlist.org/?testnets=true).
-  :::
+  </Tip>
 
 </Tab>
 
@@ -134,7 +134,7 @@ Chain Signatures use [`derivation paths`](../chain-signatures#derivation-paths-o
 
 To derive the address call the `deriveAddressAndPublicKey` method passing the near account Id from which the address is being derived and the derivation path.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="Ξ EVM">
     <Github language="js"
       url="https://github.com/near-examples/near-multichain/blob/main/src/components/EVM/EVM.jsx#L98-L101" start="98" end="101" />
@@ -174,14 +174,12 @@ To derive the address call the `deriveAddressAndPublicKey` method passing the ne
 
 </Tabs>
 
-:::info
-
+<Info>
 The same NEAR account and path will always produce the same address on the target blockchain.
 
 - `example.near` + `ethereum-1` = `0x1b48b83a308ea4beb845db088180dc3389f8aa3b`
 - `example.near` + `ethereum-2` = `0x99c5d3025dc736541f2d97c3ef3c90de4d221315`
-
-</Tip>
+</Info>
 
 ---
 
@@ -273,7 +271,7 @@ The method requires four parameters:
   3. The `keyType`, `Ecdsa` for `Secp256k1` signatures and `Eddsa` for `Ed25519` signatures.
   4. The `signerAccount` which contains the `accountId` that is signing and the `signAndSendTransactions` function from [Near Connect](../../web3-apps/tutorials/wallet-login).
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="Ξ EVM">
     <Github language="js"
       url="https://github.com/near-examples/near-multichain/blob/main/src/components/EVM/EVM.jsx#L115-L123"
@@ -326,7 +324,7 @@ The contract will take some time to respond, as the `sign` method [yields execut
 
 Once the signature is returned from the MPC it needs to be formatted and added to the transaction to produce a signed transaction.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="Ξ EVM">
     <Github language="js"
       url="https://github.com/near-examples/near-multichain/blob/main/src/components/EVM/EVM.jsx#L125-L128"
@@ -372,7 +370,7 @@ For Bitcoin, the array of signatures is added to the transaction to produce a co
 
 Now that we have a signed transaction, we can relay it to the target network using `broadcastTx`.
 
-<Tabs groupId="code-tabs">
+<Tabs>
   <Tab title="Ξ EVM">
       <Github language="js"
       url="https://github.com/near-examples/near-multichain/blob/main/src/components/EVM/EVM.jsx#L150"
