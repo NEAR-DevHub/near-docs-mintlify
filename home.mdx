@@ -1,123 +1,171 @@
 ---
+hidden: true
 mode: wide
-title: "NEAR Documentation"
 ---
 
-<Columns cols={3}>
-  <Card title="NEAR Protocol" icon="layers" href="/protocol/basics" img="/assets/docs/welcome-pages/1.near-protocol.png">
-    Learn how NEAR works — accounts, access keys, transactions, gas, and the runtime.
-  </Card>
-  <Card title="Multi-Chain" icon="link" href="/chain-abstraction/what-is" img="/assets/docs/welcome-pages/2.chain-abstraction.png">
-    Sign transactions on any chain from a NEAR account using Chain Signatures and Intents.
-  </Card>
-  <Card title="Primitives" icon="blocks" href="/primitives/what-is" img="/assets/docs/welcome-pages/5.primitives.png">
-    Build with fungible tokens, NFTs, DAOs, DEXes, liquid staking, and more.
-  </Card>
-</Columns>
+<h1 class="text-center mt-0 mb-2">NEAR Developer Docs</h1>
+<div class="mb-10 text-lg text-center prose prose-gray dark:prose-invert">
+  <p>Build smart contracts, web apps, AI agents, and multichain experiences on NEAR.</p>
+</div>
 
----
+<div class="landing pt-2 max-w-6xl mx-auto space-y-10">
 
-## Core Concepts
+  <div>
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4 ps-0">What are you building?</h2>
+    <Columns cols={3}>
+      <Card title="Smart Contract" icon="code" href="/smart-contracts/quickstart" cta="Quickstart" arrow>
+        Deploy contracts in Rust, TypeScript, Python, or Go. Write logic that lives on-chain.
+      </Card>
+      <Card title="Web App & Wallets" icon="globe" href="/web3-apps/quickstart" cta="Quickstart" arrow>
+        Connect your frontend to NEAR. Integrate wallet sign-in and call contracts from the browser.
+      </Card>
+      <Card title="AI Agent" icon="bot" href="/ai/introduction" cta="Get started" arrow>
+        Deploy verifiable AI agents running in TEEs. Give agents on-chain identity and signing keys.
+      </Card>
+    </Columns>
+    <Columns cols={3}>
+      <Card title="Multichain App" icon="link" href="/chain-abstraction/chain-signatures" cta="Explore" arrow>
+        Sign Bitcoin, Ethereum, and Solana transactions from a single NEAR account — no bridges.
+      </Card>
+      <Card title="DeFi & NFTs" icon="blocks" href="/primitives/what-is" cta="Browse primitives" arrow>
+        Integrate fungible tokens, NFTs, DAOs, and DEXes using NEAR's ready-made primitives.
+      </Card>
+      <Card title="Learn NEAR Protocol" icon="book-open" href="/protocol/basics" cta="Read the docs" arrow>
+        Understand accounts, access keys, gas, transactions, and how the NEAR runtime works.
+      </Card>
+    </Columns>
+  </div>
 
-<Columns cols={2}>
-  <Card title="Accounts & Access Keys" icon="key" href="/protocol/account-model">
-    NEAR uses human-readable account IDs and a flexible key system that separates signing permissions.
-  </Card>
-  <Card title="Transactions & Gas" icon="zap" href="/protocol/transactions">
-    Understand how actions are bundled into transactions and how fees are calculated.
-  </Card>
-  <Card title="Data Flow" icon="workflow" href="/protocol/data-flow/near-data-flow">
-    Trace how data moves through the NEAR network from transaction submission to finality.
-  </Card>
-  <Card title="Storage Staking" icon="database" href="/protocol/storage/storage-staking">
-    Learn how contracts pay for on-chain storage and how to optimize costs.
-  </Card>
-</Columns>
+  <Callout>
+    <p class="text-center">
+      New to NEAR? Start with the <a href="/tutorials/auction/0-intro">Auction Tutorial</a> — build a full dApp from scratch, step by step.
+    </p>
+  </Callout>
 
----
+  <Columns cols={2}>
+    <div class="mr-4">
+      <h2 class="mb-2">Start Building in Minutes</h2>
+      <p>Whether you're writing a smart contract, building a web app, connecting to other chains, or deploying an AI agent — NEAR has the tools to get you started fast.</p>
+      <p><a href="/smart-contracts/quickstart">Smart Contract Quickstart →</a></p>
+      <p><a href="/web3-apps/quickstart">Web App Quickstart →</a></p>
+      <p><a href="/chain-abstraction/chain-signatures">Multichain →</a></p>
+      <p><a href="/ai/introduction">AI Agents →</a></p>
+    </div>
+    <CodeGroup>
+    ```bash hello.rs
+    $> npx create-near-app@latest
 
-## Tokens & Primitives
+    =================================================================
+    👋 Welcome to Near! Learn more: https://docs.near.org/
+    🔧 Let's get your project ready.
+    =================================================================
 
-<Columns cols={3}>
-  <Card title="Fungible Tokens" icon="coins" href="/primitives/ft/ft">
-    Deploy and interact with NEP-141 compliant FT contracts.
-  </Card>
-  <Card title="Non-Fungible Tokens" icon="image" href="/primitives/nft/nft">
-    Mint and manage NFTs with the NEP-171 standard.
-  </Card>
-  <Card title="Linkdrops" icon="gift" href="/primitives/linkdrop/linkdrop">
-    Drop NEAR, FTs, or NFTs claimable through a simple link.
-  </Card>
-  <Card title="Liquid Staking" icon="trending-up" href="/primitives/liquid-staking/liquid-staking">
-    Stake NEAR and receive a liquid token representing your position.
-  </Card>
-  <Card title="DAOs" icon="users" href="/primitives/dao">
-    Govern protocols and treasuries with on-chain decentralized organizations.
-  </Card>
-  <Card title="DEXes" icon="arrow-left-right" href="/primitives/dex">
-    Integrate decentralized exchange protocols into your applications.
-  </Card>
-</Columns>
+    ✅ What do you want to build? › "Smart Contract"
+    ✅ Name your project to create a contract: "hello-near"
+    ✅ Success! Created 'hello-near', a smart contract in Rust
 
----
+    Build, test, and deploy your contract using cargo:
+     * cargo near build
+     * cargo test
+     * cargo near deploy
+    ```
 
-## Multi-Chain
+    ```javascript multichain.js
+    import { Account, KeyPair, JsonRpcProvider, KeyPairSigner } from "near-api-js"
+    import { getAdapter, chains } from "multichain.js"
 
-<Columns cols={2}>
-  <Card title="Chain Signatures" icon="pen-tool" href="/chain-abstraction/chain-signatures" img="/assets/docs/welcome-pages/7.discover.png">
-    Use a NEAR account to sign transactions on Bitcoin, Ethereum, Solana, and beyond.
-  </Card>
-  <Card title="Omnibridge" icon="bridge" href="/chain-abstraction/omnibridge/overview" img="/assets/docs/welcome-pages/6.data-infrastructure.png">
-    Bridge assets natively across chains without wrapping or custodians.
-  </Card>
-</Columns>
+    async function main() {
+      const nearProvider = new JsonRpcProvider({ url: "https://test.rpc.fastnear.com" })
+      const nearAccount = new Account("account.testnet", nearProvider, "ed25519:...")
 
-<Columns cols={2}>
-  <Card title="Intents" icon="sparkles" href="/chain-abstraction/intents/overview">
-    Express desired outcomes and let solvers compete to fulfill them optimally.
-  </Card>
-  <Card title="Meta Transactions" icon="shield" href="/chain-abstraction/meta-transactions">
-    Enable gasless transactions by relaying signed messages on behalf of users.
-  </Card>
-</Columns>
+      const arbitrum = getAdapter({ chain: chains.ARBITRUM, mpcNetwork: "testnet" })
+      const arbAddress = await arbitrum.getAddressControlledBy({ nearAddress: nearAccount.accountId })
+      const arbBalance = await arbitrum.getBalance({ address: arbAddress })
+      console.log("Controlled Account", { arbAddress, arbBalance })
 
----
+      await arbitrum.transfer({
+        to: "0x2f318C334780961FB129D2a6c30D0763d9a5C970",
+        amount: "10000000000000000", // 0.01 ETH
+        nearAccount,
+      })
+    }
+    ```
 
-## Tutorials
+    ```bash app.jsx
+    $> npx create-near-app@latest
 
-<Columns cols={2}>
-  <Card title="Auction Tutorial" icon="gavel" href="/tutorials/auction/0-intro">
-    Build a full auction contract step by step — from basic bidding to frontend and factory deployment.
-  </Card>
-  <Card title="Multichain DAO" icon="globe" href="/tutorials/multichain-dao/0-intro">
-    Learn how a single NEAR vote can execute actions across multiple EVM chains.
-  </Card>
-</Columns>
+    =================================================================
+    👋 Welcome to Near! Learn more: https://docs.near.org/
+    🔧 Let's get your project ready.
+    =================================================================
 
-<Columns cols={3}>
-  <Card title="FT Zero to Hero" icon="coins" href="/tutorials/fts">
-    Build a fully-featured fungible token contract from scratch.
-  </Card>
-  <Card title="NFT Zero to Hero" icon="image" href="/tutorials/nfts">
-    Mint NFTs and build a complete NFT contract step by step.
-  </Card>
-  <Card title="Cross-Contract Calls" icon="arrow-right-left" href="/tutorials/examples/xcc">
-    Learn to call other contracts and compose on-chain logic.
-  </Card>
-</Columns>
+    ✅ What do you want to build? › "A Web App"
+    ✅ Select a framework for your frontend › "Vite (React)"
+    ✅ Name your project: "hello-near"
+    ✅ Success! Created 'hello-near', a web-app using Vite React.
 
----
+    Start using your new NEAR app:
+     * cd hello-near
+     * npm run dev
+    ```
 
-## Network
+    ```javascript ai.js
+    import { Hono } from "hono";
+    import { agentAccountId, agent } from "@neardefi/shade-agent-js";
 
-<Columns cols={3}>
-  <Card title="Validators" icon="server" href="/protocol/network/validators">
-    Learn how validators secure the network and how to become one.
-  </Card>
-  <Card title="Networks & Testnets" icon="globe" href="/protocol/network/networks">
-    Understand mainnet, testnet, and localnet environments.
-  </Card>
-  <Card title="Staking" icon="lock" href="/protocol/network/staking">
-    Delegate or stake directly to support network security.
-  </Card>
-</Columns>
+    const app = new Hono();
+
+    app.get("/", async (c) => {
+      const accountId = await agentAccountId();
+      const balance = await agent("getBalance");
+
+      return c.json({
+        accountId,
+        balance,
+      });
+    });
+
+    export default app;
+    ```
+  </CodeGroup>
+  </Columns>
+
+  <h2 class="ps-0">Browse by Topic</h2>
+
+  <Columns cols={3}>
+    <Card title="Smart Contracts" icon="code" href="/smart-contracts/what-is" cta="Read docs" arrow>
+      Write and deploy contracts in Rust, TypeScript, Python, or Go.
+    </Card>
+    <Card title="Web3 Apps" icon="globe" href="/web3-apps/quickstart" cta="Quickstart" arrow>
+      Connect frontends to NEAR using near-api-js and the Wallet Selector.
+    </Card>
+    <Card title="AI & Agents" icon="bot" href="/ai/introduction" cta="Explore" arrow>
+      Verifiable AI agents with on-chain identity, powered by TEEs.
+    </Card>
+  </Columns>
+
+  <Columns cols={3}>
+    <Card title="Chain Abstraction" icon="link" href="/chain-abstraction/what-is" cta="Explore" arrow>
+      Sign transactions on any chain from a single NEAR account.
+    </Card>
+    <Card title="Primitives" icon="blocks" href="/primitives/what-is" cta="Browse" arrow>
+      FTs, NFTs, DAOs, DEXes, liquid staking, and more — ready to use.
+    </Card>
+    <Card title="NEAR Protocol" icon="layers" href="/protocol/account-model" cta="Read docs" arrow>
+      Accounts, access keys, gas, transactions, and the NEAR runtime.
+    </Card>
+  </Columns>
+
+  <Columns cols={3}>
+    <Card title="Tutorials" icon="graduation-cap" href="/tutorials/auction/0-intro" cta="Start tutorial" arrow>
+      Hands-on guides from a simple auction contract to a full multichain DAO.
+    </Card>
+    <Card title="Data Infrastructure" icon="database" href="/data-infrastructure/what-is" cta="Explore" arrow>
+      Index and query on-chain data with NEAR Lake, BigQuery, and indexers.
+    </Card>
+    <Card title="Validators" icon="server" href="/protocol/network/validators" cta="Learn how" arrow>
+      Secure the network and earn rewards as a validator or delegator.
+    </Card>
+  </Columns>
+
+</div>

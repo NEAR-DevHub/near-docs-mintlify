@@ -138,7 +138,14 @@
             "group": "Architecture",
             "pages": [
               "protocol/architecture"
-            ]
+            ],
+            "anchors": [
+  {
+    "anchor": "Wallets",
+    "icon": "wallet",
+    "href": "https://wallet.near.org"
+  }
+]
           }
         ]
       },
@@ -555,9 +562,15 @@
         ]
       },
       {
-        "tab": "EVM Developers",
-
-        "href": "https://doc.aurora.dev"
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "RPC",
+            "pages": [
+              "api/rpc/providers"
+            ]
+          }
+        ]
       }
     ]
   }
