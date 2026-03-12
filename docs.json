@@ -73,7 +73,8 @@
             "group": "Getting Started",
             "pages": [
               "protocol/basics",
-              "tutorials/protocol/create-account"
+              "tutorials/protocol/create-account",
+              "faucet"
             ]
           },
           {
