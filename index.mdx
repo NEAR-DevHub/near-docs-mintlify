@@ -1,0 +1,62 @@
+---
+hidden: true
+mode: wide
+---
+
+<Columns cols={2}>
+  <div class="mr-4">
+    <h2 class="mb-2">Something Something Apps</h2>
+    <p>Build your first NEAR app in minutes with our quickstart templates.</p>
+    <p><a href="/smart-contracts/quickstart">Smart Contract Quickstart →</a></p>
+    <p><a href="/web3-apps/quickstart">Web App Quickstart →</a></p>
+  </div>
+  <CodeGroup>
+    ```bash create-near-app
+    $> npx create-near-app@latest
+
+    =================================================================
+    👋 Welcome to Near! Learn more: https://docs.near.org/
+    🔧 Let's get your project ready.
+    =================================================================
+
+    ✅ What do you want to build? › "Smart Contract"
+    ✅ Name your project to create a contract: "hello-near"
+    ✅ Success! Created 'hello-near', a smart contract in Rust
+
+    Build, test, and deploy your contract using cargo:
+     * cargo near build
+     * cargo test
+     * cargo near deploy
+    ```
+  </CodeGroup>
+</Columns>
+
+<div class="text-center">
+  <Callout color="#3b82f6"> New to NEAR? Create a [testnet account](create-account.mdx) and top it up with our [faucet](./faucet) to get started. </Callout>
+</div>
+
+<h2 class="ps-0">Browse by Topic</h2>
+
+<CardGroup cols={3}>
+  <Card title="NEAR Protocol" icon="layers" href="/protocol/account-model" cta="Read docs" arrow>
+    Accounts, access keys, gas, transactions, and the NEAR runtime.
+  </Card>
+  <Card title="Smart Contracts" icon="code" href="/smart-contracts/what-is" cta="Read docs" arrow>
+    Write and deploy contracts in Rust, TypeScript, Python, or Go.
+  </Card>
+  <Card title="Web3 Apps" icon="globe" href="/web3-apps/quickstart" cta="Quickstart" arrow>
+    Connect frontends to NEAR using near-api-js and the Wallet Selector.
+  </Card>
+  <Card title="AI & Agents" icon="bot" href="/ai/introduction" cta="Explore" arrow>
+    Verifiable AI agents with on-chain identity, powered by TEEs.
+  </Card>
+  <Card title="Chain Abstraction" icon="link" href="/chain-abstraction/what-is" cta="Explore" arrow>
+    Sign transactions on any chain from a single NEAR account.
+  </Card>
+  <Card title="Primitives" icon="blocks" href="/primitives/what-is" cta="Browse" arrow>
+    FTs, NFTs, DAOs, DEXes, liquid staking, and more — ready to use.
+  </Card>
+  <Card title="Data Infrastructure" icon="database" href="/data-infrastructure/what-is" cta="Explore" arrow>
+    Index and query on-chain data with NEAR Lake, BigQuery, and indexers.
+  </Card>
+</CardGroup>

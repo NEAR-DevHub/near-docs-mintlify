@@ -55,13 +55,16 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Welcome",
-        "hidden": true,
+        "tab": " ",
         "groups": [
           {
-            "group": "Welcome",
+            "group": " ",
             "pages": [
-              "home"
+              "/index",
+              "protocol/basics",
+              "create-account",
+              "faucet",
+              "tools-for-ai"
             ]
           }
         ]
@@ -70,63 +73,51 @@
         "tab": "Protocol",
         "groups": [
           {
-            "group": "Getting Started",
+              "group": "Accounts / Contracts",
             "pages": [
-              "protocol/basics",
-              "tutorials/protocol/create-account",
-              "faucet"
-            ]
-          },
-          {
-            "group": "Concepts",
-            "pages": [
-              {
-                "group": "Accounts / Contracts",
-                "pages": [
-                  "protocol/account-model",
-                  "protocol/account-id",
-                  "protocol/access-keys"
-                ]
-              },
-              {
-                "group": "Transactions",
-                "pages": [
-                  "protocol/transactions",
-                  "protocol/transaction-anatomy",
-                  "protocol/gas",
-                  "protocol/transaction-execution",
-                  "chain-abstraction/meta-transactions"
-                ]
-              },
-              {
-                "group": "Data Flow",
-                "pages": [
-                  "protocol/data-flow/near-data-flow",
-                  "protocol/data-flow/token-transfer-flow"
-                ]
-              },
-              {
-                "group": "Tokens",
-                "pages": [
-                  "protocol/network/tokens",
-                  "protocol/network/token-loss"
-                ]
-              },
-              {
-                "group": "Storage",
-                "pages": [
-                  "protocol/storage/storage-staking"
-                ]
-              },
-              {
-                "group": "Network",
-                "pages": [
-                  "protocol/network/validators",
-                  "protocol/network/networks",
-                  "protocol/network/epoch",
-                  "protocol/network/runtime"
-                ]
-              }
+                "protocol/account-model",
+                "protocol/account-id",
+                "protocol/access-keys"
+              ]
+            },
+            {
+              "group": "Transactions",
+              "pages": [
+                "protocol/transactions",
+                "protocol/transaction-anatomy",
+                "protocol/gas",
+                "protocol/transaction-execution",
+                "chain-abstraction/meta-transactions"
+              ]
+            },
+            {
+              "group": "Data Flow",
+              "pages": [
+                "protocol/data-flow/near-data-flow",
+                "protocol/data-flow/token-transfer-flow"
+              ]
+            },
+            {
+              "group": "Tokens",
+              "pages": [
+                "protocol/network/tokens",
+                "protocol/network/token-loss"
+              ]
+            },
+            {
+              "group": "Storage",
+              "pages": [
+                "protocol/storage/storage-staking"
+              ]
+            },
+            {
+              "group": "Network",
+              "pages": [
+                "protocol/architecture",
+                "protocol/network/validators",
+                "protocol/network/networks",
+                "protocol/network/epoch",
+                "protocol/network/runtime"
             ]
           },
           {
@@ -134,19 +125,6 @@
             "pages": [
               "tutorials/protocol/importing-account"
             ]
-          },
-          {
-            "group": "Architecture",
-            "pages": [
-              "protocol/architecture"
-            ],
-            "anchors": [
-  {
-    "anchor": "Wallets",
-    "icon": "wallet",
-    "href": "https://wallet.near.org"
-  }
-]
           }
         ]
       },
@@ -213,8 +191,7 @@
           {
             "group": "Overview",
             "pages": [
-              "ai/introduction",
-              "ai/tools-for-ai"
+              "ai/introduction"
             ]
           },
           {
@@ -563,14 +540,23 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "RPC API",
         "groups": [
           {
-            "group": "RPC",
+            "group": "Providers",
             "pages": [
+              "api/rpc/providers",
+              "api/rpc/providers"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "api/rpc/providers",
               "api/rpc/providers"
             ]
           }
+
         ]
       }
     ]
