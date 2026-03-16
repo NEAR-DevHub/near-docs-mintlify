@@ -58,7 +58,11 @@
       "display": "interactive"
     },
     "examples": {
-      "languages": ["bash", "javascript", "python"],
+      "languages": [
+        "bash",
+        "javascript",
+        "python"
+      ],
       "defaults": "all"
     }
   },
@@ -83,51 +87,51 @@
         "tab": "Protocol",
         "groups": [
           {
-              "group": "Accounts / Contracts",
+            "group": "Accounts / Contracts",
             "pages": [
-                "protocol/account-model",
-                "protocol/account-id",
-                "protocol/access-keys"
-              ]
-            },
-            {
-              "group": "Transactions",
-              "pages": [
-                "protocol/transactions",
-                "protocol/transaction-anatomy",
-                "protocol/gas",
-                "protocol/transaction-execution",
-                "chain-abstraction/meta-transactions"
-              ]
-            },
-            {
-              "group": "Data Flow",
-              "pages": [
-                "protocol/data-flow/near-data-flow",
-                "protocol/data-flow/token-transfer-flow"
-              ]
-            },
-            {
-              "group": "Tokens",
-              "pages": [
-                "protocol/network/tokens",
-                "protocol/network/token-loss"
-              ]
-            },
-            {
-              "group": "Storage",
-              "pages": [
-                "protocol/storage/storage-staking"
-              ]
-            },
-            {
-              "group": "Network",
-              "pages": [
-                "protocol/architecture",
-                "protocol/network/validators",
-                "protocol/network/networks",
-                "protocol/network/epoch",
-                "protocol/network/runtime"
+              "protocol/account-model",
+              "protocol/account-id",
+              "protocol/access-keys"
+            ]
+          },
+          {
+            "group": "Transactions",
+            "pages": [
+              "protocol/transactions",
+              "protocol/transaction-anatomy",
+              "protocol/gas",
+              "protocol/transaction-execution",
+              "chain-abstraction/meta-transactions"
+            ]
+          },
+          {
+            "group": "Data Flow",
+            "pages": [
+              "protocol/data-flow/near-data-flow",
+              "protocol/data-flow/token-transfer-flow"
+            ]
+          },
+          {
+            "group": "Tokens",
+            "pages": [
+              "protocol/network/tokens",
+              "protocol/network/token-loss"
+            ]
+          },
+          {
+            "group": "Storage",
+            "pages": [
+              "protocol/storage/storage-staking"
+            ]
+          },
+          {
+            "group": "Network",
+            "pages": [
+              "protocol/architecture",
+              "protocol/network/validators",
+              "protocol/network/networks",
+              "protocol/network/epoch",
+              "protocol/network/runtime"
             ]
           },
           {
@@ -148,7 +152,6 @@
       },
       {
         "tab": "Multi-Chain",
-
         "groups": [
           {
             "group": "Overview",
@@ -204,7 +207,6 @@
       },
       {
         "tab": "AI and Agents",
-
         "groups": [
           {
             "group": "Overview",
@@ -267,7 +269,6 @@
       },
       {
         "tab": "Smart Contracts",
-
         "groups": [
           {
             "group": "Getting Started",
@@ -383,7 +384,6 @@
       },
       {
         "tab": "App Development",
-
         "groups": [
           {
             "group": "Getting Started",
@@ -397,14 +397,6 @@
             "pages": [
               "web3-apps/concepts/web-login",
               "web3-apps/concepts/data-types"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "tools/near-api",
-              "tools/cli",
-              "web3-apps/near-connect"
             ]
           },
           {
@@ -451,12 +443,19 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "tools/near-api",
+              "tools/cli",
+              "web3-apps/near-connect"
+            ]
           }
         ]
       },
       {
         "tab": "Tokens & Primitives",
-
         "groups": [
           {
             "group": "Primitives",
@@ -525,7 +524,6 @@
       },
       {
         "tab": "Data Infrastructure",
-
         "groups": [
           {
             "group": "Overview",
