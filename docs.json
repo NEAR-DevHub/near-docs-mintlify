@@ -3,9 +3,9 @@
   "theme": "almond",
   "name": "NEAR Docs",
   "colors": {
-    "primary": "#3b82f6",
-    "light": "#3b82f6",
-    "dark": "#3b82f6"
+    "primary": "#1fb858",
+    "light": "#1fb858",
+    "dark": "#1fb858"
   },
   "logo": {
     "light": "/assets/logo.svg",
@@ -146,123 +146,6 @@
               "protocol/explorer",
               "tools/cli",
               "protocol/reference"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Multi-Chain",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "chain-abstraction/what-is"
-            ]
-          },
-          {
-            "group": "Multi-Chain Accounts",
-            "pages": [
-              "chain-abstraction/chain-signatures",
-              {
-                "group": "Tutorials",
-                "pages": [
-                  "chain-abstraction/chain-signatures/implementation",
-                  {
-                    "group": "Controlling NEAR Accounts",
-                    "pages": [
-                      "tutorials/controlling-near-accounts/0-introduction",
-                      "tutorials/controlling-near-accounts/1-setup",
-                      "tutorials/controlling-near-accounts/2-transfer"
-                    ]
-                  },
-                  {
-                    "group": "Cross-Chain DAO Governance",
-                    "pages": [
-                      "tutorials/multichain-dao/0-intro",
-                      "tutorials/multichain-dao/1-request",
-                      "tutorials/multichain-dao/2-signing",
-                      "tutorials/multichain-dao/3-voting"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Intents",
-            "pages": [
-              "chain-abstraction/intents/overview"
-            ]
-          },
-          {
-            "group": "Multi-Chain Bridge",
-            "pages": [
-              "chain-abstraction/omnibridge/overview",
-              "chain-abstraction/omnibridge/how-it-works",
-              "chain-abstraction/omnibridge/implementation",
-              "chain-abstraction/omnibridge/roadmap"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "AI and Agents",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "ai/introduction"
-            ]
-          },
-          {
-            "group": "Shade Agents",
-            "pages": [
-              {
-                "group": "Getting Started",
-                "pages": [
-                  "ai/shade-agents/getting-started/introduction",
-                  {
-                    "group": "Quickstart",
-                    "pages": [
-                      "ai/shade-agents/getting-started/quickstart/deploying",
-                      "ai/shade-agents/getting-started/quickstart/components"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Concepts",
-                "pages": [
-                  "ai/shade-agents/concepts/framework-overview",
-                  "ai/shade-agents/concepts/what-can-you-build",
-                  "ai/shade-agents/concepts/using-ai",
-                  "ai/shade-agents/concepts/terminology",
-                  "ai/shade-agents/concepts/security"
-                ]
-              },
-              {
-                "group": "Tutorials",
-                "pages": [
-                  "ai/shade-agents/tutorials/tutorials-overview",
-                  {
-                    "group": "AI DAO",
-                    "pages": [
-                      "ai/shade-agents/tutorials/ai-dao/overview",
-                      "ai/shade-agents/tutorials/ai-dao/dao-agent-contract",
-                      "ai/shade-agents/tutorials/ai-dao/dao-agent",
-                      "ai/shade-agents/tutorials/ai-dao/deploying"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Reference",
-                "pages": [
-                  "ai/shade-agents/reference/api",
-                  "ai/shade-agents/reference/cli",
-                  "ai/shade-agents/reference/agent-contract"
-                ]
-              }
             ]
           }
         ]
@@ -450,6 +333,61 @@
               "tools/near-api",
               "tools/cli",
               "web3-apps/near-connect"
+            ]
+          }
+        ]
+      },
+     {
+        "tab": "Multi-Chain",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "chain-abstraction/what-is"
+            ]
+          },
+          {
+            "group": "Multi-Chain Accounts",
+            "pages": [
+              "chain-abstraction/chain-signatures",
+              {
+                "group": "Tutorials",
+                "pages": [
+                  "chain-abstraction/chain-signatures/implementation",
+                  {
+                    "group": "Controlling NEAR Accounts",
+                    "pages": [
+                      "tutorials/controlling-near-accounts/0-introduction",
+                      "tutorials/controlling-near-accounts/1-setup",
+                      "tutorials/controlling-near-accounts/2-transfer"
+                    ]
+                  },
+                  {
+                    "group": "Cross-Chain DAO Governance",
+                    "pages": [
+                      "tutorials/multichain-dao/0-intro",
+                      "tutorials/multichain-dao/1-request",
+                      "tutorials/multichain-dao/2-signing",
+                      "tutorials/multichain-dao/3-voting"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Intents",
+            "pages": [
+              "chain-abstraction/intents/overview"
+            ]
+          },
+          {
+            "group": "Multi-Chain Bridge",
+            "pages": [
+              "chain-abstraction/omnibridge/overview",
+              "chain-abstraction/omnibridge/how-it-works",
+              "chain-abstraction/omnibridge/implementation",
+              "chain-abstraction/omnibridge/roadmap"
             ]
           }
         ]

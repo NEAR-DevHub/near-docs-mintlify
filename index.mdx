@@ -3,31 +3,12 @@ hidden: true
 mode: wide
 ---
 
-{/* ───────────────────────── HERO ───────────────────────── */}
-
-<div class="text-center pt-8 pb-10">
-  <div class="mb-5">
-    <Badge color="blue" shape="pill">Developer Documentation</Badge>
-  </div>
-  <h1 class="text-5xl font-bold tracking-tight mb-5">
-    Build on NEAR
-  </h1>
-  <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-8">
-    The open platform for scalable smart contracts, web3 apps, AI agents, and cross-chain experiences — in any language, on any chain.
-  </p>
-  <div class="flex justify-center gap-3 flex-wrap">
-    <a href="/smart-contracts/quickstart" style={{display:'inline-flex',alignItems:'center',gap:'8px',padding:'10px 20px',borderRadius:'8px',background:'#2563eb',color:'#fff',fontWeight:'600',textDecoration:'none'}}>
-      Get started →
-    </a>
-    <a href="/protocol/account-model" style={{display:'inline-flex',alignItems:'center',gap:'8px',padding:'10px 20px',borderRadius:'8px',border:'1px solid #d1d5db',fontWeight:'600',textDecoration:'none'}}>
-      Explore the protocol
-    </a>
-  </div>
-</div>
-
----
-
-## Quickstart by use case
+<h1 class="text-5xl font-bold tracking-tight text-center pb-0 mb-0">
+  NEAR Developer Docs
+</h1>
+<p class="text-xl text-center text-gray-500 max-w-2xl mx-auto py-0 pb-4">
+  It has never been easier to build smart contracts, decentralized applications, and native cross-chain applications.
+</p>
 
 <Tabs>
   <Tab title="Smart Contract">
@@ -41,7 +22,7 @@ mode: wide
         </div>
         <h3 class="text-xl font-bold mb-2">Deploy your first contract in minutes</h3>
         <p class="text-gray-500 mt-2 mb-5">
-          Write smart contracts in Rust, JavaScript, TypeScript, Python, or Go. Scaffold a working project with a single command, then build, test, and deploy.
+          Write smart contracts in Rust, JavaScript, TypeScript or Python. Scaffold a working project with a single command, then build, test, and deploy.
         </p>
         <a href="/smart-contracts/quickstart" style={{display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 18px',borderRadius:'8px',background:'#2563eb',color:'#fff',fontWeight:'600',textDecoration:'none',fontSize:'14px',marginBottom:'16px'}}>
           Start the quickstart →
@@ -122,54 +103,6 @@ Start using your new NEAR app:
       </CodeGroup>
     </Columns>
   </Tab>
-  <Tab title="AI Agent">
-    <Columns cols={2}>
-      <div>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <Badge color="purple" shape="pill" icon="sparkles">New</Badge>
-          <Badge color="gray" shape="pill">TEE</Badge>
-          <Badge color="gray" shape="pill">On-chain identity</Badge>
-          <Badge color="gray" shape="pill">Autonomous</Badge>
-        </div>
-        <h3 class="text-xl font-bold mb-2">Build verifiable AI agents on-chain</h3>
-        <p class="text-gray-500 mt-2 mb-5">
-          Create autonomous agents with on-chain identity and tamper-proof execution via Trusted Execution Environments. Agents hold assets, sign transactions, and run without an owner key.
-        </p>
-        <a href="/ai/shade-agents/getting-started/introduction" style={{display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 18px',borderRadius:'8px',background:'#2563eb',color:'#fff',fontWeight:'600',textDecoration:'none',fontSize:'14px',marginBottom:'16px'}}>
-          Build your first agent →
-        </a>
-        <Card title="AI & Agents overview" icon="bot" href="/ai/introduction" horizontal arrow>
-          Architecture, use cases, and how TEEs work on NEAR.
-        </Card>
-        <Card title="What can you build?" icon="lightbulb" href="/ai/shade-agents/concepts/what-can-you-build" horizontal arrow>
-          Real-world agent examples — trading bots, DAOs, oracles.
-        </Card>
-      </div>
-      <CodeGroup>
-
-```javascript ia.js
-import { Hono } from "hono";
-import { agentAccountId, agent } from "@neardefi/shade-agent-js";
-
-const app = new Hono();
-
-app.get("/", async (c) => {
-  const accountId = await agentAccountId();
-  const balance = await agent("getBalance");
-
-  return c.json({
-    accountId,
-    balance,
-  });
-});
-
-
-export default app;
-```
-
-      </CodeGroup>
-    </Columns>
-  </Tab>
   <Tab title="Chain Abstraction">
     <Columns cols={2}>
       <div>
@@ -223,32 +156,32 @@ async function main() {
 
 ---
 
-## What you can build
+## Platform capabilities
 
 <CardGroup cols={3}>
-  <Card title="DeFi & Finance" icon="coins" color="#3b82f6" href="/primitives/what-is" cta="Browse primitives" arrow>
-    AMMs, DEXes, liquid staking, lending, and token standards (FT, NFT) — audited primitives ready to fork or compose.
+  <Card title="Sub-second finality" icon="zap" horizontal>
+    Transactions confirm in ~1–2 seconds on mainnet with deterministic finality. No reorgs, no waiting.
   </Card>
-  <Card title="AI Agents" icon="bot" color="#8b5cf6" href="/ai/introduction" cta="Explore" arrow>
-    Autonomous agents with on-chain identity, asset control, and verifiable execution inside TEEs.
+  <Card title="Near-zero fees" icon="circle-dollar-sign" horizontal>
+    Transaction fees under $0.001. Storage costs ~1 NEAR per 100 KB — fully refundable on deletion.
   </Card>
-  <Card title="Cross-Chain Apps" icon="link" color="#06b6d4" href="/chain-abstraction/what-is" cta="Learn more" arrow>
-    Control wallets on Bitcoin, Ethereum, and Solana from one NEAR account using Chain Signatures — no bridge, no wrapped assets.
+  <Card title="Multi-language contracts" icon="code" horizontal>
+    Write in Rust, JavaScript/TypeScript, Python, or Go. Full WASM runtime, no new syntax to learn.
   </Card>
-  <Card title="Games & Social" icon="gamepad-2" color="#22c55e" href="/web3-apps/quickstart" cta="Get started" arrow>
-    On-chain game logic, NFT-based digital assets, and social graphs with human-readable account names.
+  <Card title="Chain Signatures" icon="key" horizontal>
+    Derive threshold keys for any chain — Bitcoin, Ethereum, Solana — from one NEAR account.
   </Card>
-  <Card title="DAOs & Governance" icon="users" color="#f59e0b" href="/primitives/what-is" cta="Browse" arrow>
-    Fully on-chain governance, multi-sig treasuries, and DAO contracts with audited standards.
+  <Card title="TEE-backed agents" icon="shield-check" horizontal>
+    Run AI inference inside Trusted Execution Environments for verifiable, tamper-proof outputs.
   </Card>
-  <Card title="Data & Analytics" icon="database" color="#ef4444" href="/data-infrastructure/what-is" cta="Explore" arrow>
-    Index and query on-chain activity in real time with NEAR Lake, BigQuery, and hosted indexers.
+  <Card title="Sharded & scalable" icon="server" horizontal>
+    Nightshade sharding enables linear throughput scaling as validator count grows.
   </Card>
 </CardGroup>
 
 ---
 
-## Get started in 3 steps
+## Get started in 2 steps
 
 <Steps>
   <Step title="Create a testnet account">
@@ -263,15 +196,6 @@ async function main() {
 
     ```bash
     npx create-near-app@latest
-    ```
-  </Step>
-  <Step title="Build, test, and deploy">
-    Iterate locally, run tests, and deploy to testnet. When ready, promote to mainnet with one command.
-
-    ```bash
-    cargo near build   # compile (or: npm run build)
-    cargo test         # run tests (or: npm test)
-    cargo near deploy  # deploy to testnet/mainnet
     ```
   </Step>
 </Steps>
@@ -290,9 +214,6 @@ async function main() {
   <Card title="Web3 Apps" icon="globe" href="/web3-apps/quickstart" cta="Quickstart" arrow>
     Connect frontends to NEAR using near-api-js and the Wallet Selector.
   </Card>
-  <Card title="AI & Agents" icon="bot" href="/ai/introduction" cta="Explore" arrow>
-    Verifiable AI agents with on-chain identity, powered by TEEs.
-  </Card>
   <Card title="Chain Abstraction" icon="link" href="/chain-abstraction/what-is" cta="Explore" arrow>
     Sign transactions on any chain from a single NEAR account.
   </Card>
@@ -302,54 +223,5 @@ async function main() {
   <Card title="Data Infrastructure" icon="database" href="/data-infrastructure/what-is" cta="Explore" arrow>
     Index and query on-chain data with NEAR Lake, BigQuery, and indexers.
   </Card>
-  <Card title="Tutorials" icon="graduation-cap" href="/tutorials/multichain-dao/0-intro" cta="Learn" arrow>
-    Step-by-step guides for building real apps — auctions, NFTs, DAOs, and more.
-  </Card>
-  <Card title="Security" icon="shield" href="/smart-contracts/security/welcome" cta="Reference" arrow>
-    Reentrancy, callbacks, storage attacks, and the smart contract security checklist.
-  </Card>
 </CardGroup>
 
----
-
-## Platform capabilities
-
-<CardGroup cols={3}>
-  <Card title="Sub-second finality" icon="zap" horizontal>
-    Transactions confirm in ~1–2 seconds on mainnet with deterministic finality. No reorgs, no waiting.
-  </Card>
-  <Card title="Near-zero fees" icon="circle-dollar-sign" horizontal>
-    Transaction fees under $0.001. Storage costs ~1 NEAR per 100 KB — fully refundable on deletion.
-  </Card>
-  <Card title="Multi-language contracts" icon="code-2" horizontal>
-    Write in Rust, JavaScript/TypeScript, Python, or Go. Full WASM runtime, no new syntax to learn.
-  </Card>
-  <Card title="Chain Signatures" icon="key" horizontal>
-    Derive threshold keys for any chain — Bitcoin, Ethereum, Solana — from one NEAR account.
-  </Card>
-  <Card title="TEE-backed agents" icon="shield-check" horizontal>
-    Run AI inference inside Trusted Execution Environments for verifiable, tamper-proof outputs.
-  </Card>
-  <Card title="Sharded & scalable" icon="server" horizontal>
-    Nightshade sharding enables linear throughput scaling as validator count grows.
-  </Card>
-</CardGroup>
-
----
-
-## Resources
-
-<CardGroup cols={4}>
-  <Card title="GitHub" icon="github" href="https://github.com/near" cta="View source" arrow>
-    SDKs, contracts, and tooling — all open source.
-  </Card>
-  <Card title="Examples" icon="play" href="/tutorials/multichain-dao/0-intro" cta="See examples" arrow>
-    Full-stack example apps with step-by-step walkthroughs.
-  </Card>
-  <Card title="RPC Reference" icon="book-open" href="/api" cta="View API" arrow>
-    RPC methods, SDK reference, and contract interfaces.
-  </Card>
-  <Card title="Community" icon="message-circle" href="https://t.me/neardev" cta="Join Telegram" arrow>
-    Get help, share projects, and connect with NEAR builders.
-  </Card>
-</CardGroup>
