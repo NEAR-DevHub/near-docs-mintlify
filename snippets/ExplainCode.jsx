@@ -5,14 +5,22 @@ export const ExplainCode = ({ children, languages }) => {
   const [code, setCode] = useState(null);
   const blockRefs = useRef({});
   const codeContainerRef = useRef(null);
+  const ratioMap = useRef({});
 
   const lang2label = {
     rust: '🦀 Rust',
     js: '🌐 JS',
     ts: '🌐 TS',
     python: '🐍 Python',
-    go: '🐹 Go', 
+    go: '🐹 Go',
   };
+
+  const typeAccentClass = {
+    state: 'border-l-4 border-emerald-500',
+    warning: 'border-l-4 border-amber-500',
+    note: 'border-l-4 border-amber-500',
+  };
+  const accentBorder = (t) => typeAccentClass[t] || 'border-l-4 border-indigo-500';
 
   function toRaw(ref) {
     const fullUrl = ref.slice(ref.indexOf('https'));
@@ -88,6 +96,7 @@ export const ExplainCode = ({ children, languages }) => {
   useEffect(() => {
     setActiveBlock(0);
     setCode(null);
+    ratioMap.current = {};
   }, [language]);
 
   useEffect(() => {
@@ -95,18 +104,21 @@ export const ExplainCode = ({ children, languages }) => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        let bestIdx = null;
-        let bestRatio = 0;
         entries.forEach((entry) => {
           const idx = Number(entry.target.dataset.blockIdx);
-          if (entry.intersectionRatio > bestRatio) {
-            bestRatio = entry.intersectionRatio;
-            bestIdx = idx;
+          ratioMap.current[idx] = entry.intersectionRatio;
+        });
+        let bestIdx = 0;
+        let bestRatio = -1;
+        Object.entries(ratioMap.current).forEach(([idx, ratio]) => {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestIdx = Number(idx);
           }
         });
-        if (bestIdx !== null) setActiveBlock(bestIdx);
+        setActiveBlock(bestIdx);
       },
-      { threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin: '-30% 0px -30% 0px' }
+      { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1], rootMargin: '-20% 0px -20% 0px' }
     );
     observedEls.forEach(([idx, el]) => {
       el.dataset.blockIdx = idx;
@@ -161,22 +173,32 @@ export const ExplainCode = ({ children, languages }) => {
       </div>
 
       {/* Two-column layout */}
-      <div className="flex gap-6 items-start">
+      <div className="flex gap-8 items-start">
         {/* Left: explanation blocks */}
-        <div className="flex-1 flex flex-col gap-2 min-w-0">
+        <div className="flex-[5] flex flex-col gap-3 min-w-0">
           {blocks.map((block, i) => (
             <div
               key={i}
               ref={(el) => { blockRefs.current[i] = el; }}
               onClick={() => !block.type && setActiveBlock(i)}
               className={[
-                'p-4 rounded-lg border transition-all duration-200',
+                'px-5 py-4 rounded-md transition-all duration-200',
                 block.type
-                  ? 'cursor-default border-gray-200 dark:border-[#30363d] opacity-70'
+                  ? `cursor-default ${accentBorder(block.type)} opacity-75`
                   : activeBlock === i
-                    ? 'cursor-pointer border-blue-400 dark:border-blue-500/60 border-l-[3px] border-l-blue-500 dark:border-l-blue-400 ring-1 ring-blue-400/10 dark:ring-blue-400/10 shadow-[0_1px_3px_rgba(59,130,246,0.12)] dark:shadow-[0_0_6px_rgba(56,139,253,0.15)]'
-                    : 'cursor-pointer border-gray-200 dark:border-[#30363d] opacity-50 hover:opacity-80 hover:border-gray-300 dark:hover:border-[#484f58]',
+                    ? `cursor-pointer ${accentBorder(block.type)} shadow-sm`
+                    : `cursor-pointer ${accentBorder(block.type)} opacity-60 hover:opacity-90`,
               ].join(' ')}
+              style={{
+                backgroundColor: block.type
+                  ? 'var(--explain-card-bg)'
+                  : activeBlock === i
+                    ? 'var(--explain-card-active-bg)'
+                    : 'var(--explain-card-bg)',
+                border: (!block.type && activeBlock === i)
+                  ? '1px solid var(--explain-card-border)'
+                  : '1px solid transparent',
+              }}
             >
               {block.text}
             </div>
@@ -185,7 +207,7 @@ export const ExplainCode = ({ children, languages }) => {
 
         {/* Right: code panel */}
         {currentFile && (
-          <div className="flex-1 min-w-0 rounded-[10px] border border-[#d0d7de] dark:border-[#30363d] overflow-hidden sticky top-20 max-h-[75vh] flex flex-col shadow-sm bg-white dark:bg-[#0d1117]">
+          <div className="flex-[6] min-w-0 rounded-[10px] border border-[#d0d7de] dark:border-[#30363d] overflow-hidden sticky top-6 max-h-[calc(100vh-5rem)] flex flex-col shadow-md bg-white dark:bg-[#0d1117]">
             {/* Header */}
             <div className="flex items-center justify-between px-[14px] py-2 bg-[#f6f8fa] dark:bg-[#161b22] border-b border-[#d0d7de] dark:border-[#30363d] shrink-0">
               <div className="flex items-center gap-2">
@@ -214,17 +236,17 @@ export const ExplainCode = ({ children, languages }) => {
               {code === null ? (
                 <div className="p-4 text-xs text-gray-500 dark:text-gray-400">Loading...</div>
               ) : (
-                <table className="w-full border-collapse font-mono text-[0.8125rem] leading-relaxed">
+                <table className="w-full border-collapse font-mono text-[13px] leading-relaxed">
                   <tbody>
                     {code.split('\n').map((line, i) => {
                       const lineNum = startLine + i;
                       const isHL = highlighted.has(i + 1);
                       return (
-                        <tr key={i} {...(i + 1 === firstHlLine ? { 'data-first-hl': '' } : {})} className={isHL ? 'bg-yellow-50 dark:bg-yellow-900/20' : ''}>
-                          <td style={{ minWidth: '70px' }} className="py-0 pl-3 pr-3 text-right text-[0.7rem] text-[#8c959f] dark:text-[#6e7681] w-12 min-w-[3rem] whitespace-nowrap border-r border-[#d0d7de] dark:border-[#30363d] select-none align-top">
+                        <tr key={i} {...(i + 1 === firstHlLine ? { 'data-first-hl': '' } : {})} style={isHL ? { backgroundColor: 'rgba(250,204,21,0.08)' } : undefined}>
+                          <td style={{ minWidth: '70px' }} className="py-0 pl-3 pr-3 text-right text-[0.7rem] text-[#8c959f] dark:text-gray-400 w-12 min-w-[3rem] whitespace-nowrap border-r border-[#d0d7de] dark:border-gray-700 select-none align-top">
                             {lineNum}
                           </td>
-                          <td className="pl-4 pr-6 whitespace-pre text-[#1f2328] dark:text-[#e6edf3] align-top">
+                          <td style={isHL ? { borderLeft: '2px solid #facc15' } : undefined} className="pl-4 pr-6 whitespace-pre text-[#1f2328] dark:text-[#e6edf3] align-top">
                             {line || ' '}
                           </td>
                         </tr>

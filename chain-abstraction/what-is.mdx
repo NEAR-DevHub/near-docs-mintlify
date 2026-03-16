@@ -5,44 +5,17 @@ description: "Learn how NEAR allows you to seamlessly work across all chains"
 
 Through a combination of innovative technologies, NEAR enables developers to build applications that work seamlessly across multiple blockchains while abstracting away the underlying complexity for both developers and end users.
 
----
-
-<Columns cols={2}>
-  ![Multi-Chain Accounts](/assets/docs/welcome-pages/10.templates.png)
-  <div>
-    ## Multi-Chain Accounts
-
+<CardGroup cols={1}>
+  <Card title="Multi-Chain Accounts" icon="link" href="./chain-signatures" horizontal>
     Chain Signatures allow NEAR accounts **and smart contracts** to sign transactions for all other chains (including Bitcoin, Ethereum and Solana)
-
-    [Learn More](./chain-signatures)
-  </div>
-</Columns>
-
----
-
-<Columns cols={2}>
-  <div>
-    ## Swaps via Intents
-
-    A decentralized system where users simply **express desired outcomes** (like "swap BTC for ETH at the best price"), and a network of solvers then competes to fulfill these intents optimally
-
-    [Learn More](./intents/overview)
-  </div>
-  ![Swaps via Intents](/assets/docs/welcome-pages/9.near-nodes.png)
-</Columns>
-
----
-
-<Columns cols={2}>
-  ![OmniBridge](/assets/docs/welcome-pages/4.smart-contracts.png)
-  <div>
-    ## OmniBridge
-
+  </Card>
+  <Card title="Swaps via Intents" icon="repeat" href="./intents/overview" horizontal>
+    A decentralized system where users simply **express desired outcomes** (like "swap BTC for ETH at the best price"), and a network of solvers competes to fulfill these intents optimally
+  </Card>
+  <Card title="OmniBridge" icon="shuffle" href="./omnibridge/overview" horizontal>
     A multi-chain bridge that enables secure and efficient cross-chain transfers. The bridge serves as both a token factory and custodian, managing native and bridged tokens through a unified interface
-
-    [Learn More](./omnibridge/overview)
-  </div>
-</Columns>
+  </Card>
+</CardGroup>
 
 ---
 
@@ -52,18 +25,18 @@ By building on NEAR, developers do not need to worry about the complexities of i
 
 Meanwhile, users can enjoy a smooth experience, using unified accounts and assets without needing to even understand on which blockchain they are operating.
 
-<Columns cols={2}>
-  <Card title="Benefits for Developers">
+<CardGroup cols={2}>
+  <Card title="Benefits for Developers" icon="code">
     - Integrate with multiple blockchains through a single NEAR API
     - Focus on application logic instead of blockchain complexity
     - Reach users regardless of their preferred blockchain network
   </Card>
-  <Card title="Benefits for Users">
+  <Card title="Benefits for Users" icon="user">
     - Operate across all chains using a single NEAR account
     - Access assets and services from multiple blockchains seamlessly
     - Enjoy a unified and intuitive user experience
   </Card>
-</Columns>
+</CardGroup>
 
 <Accordion title="Example: Cross-Chain NFT Marketplace">
 Imagine building a digital art marketplace where users can purchase NFTs from different blockchains (Ethereum, Solana, etc.). Without chain abstraction, you'd need to:

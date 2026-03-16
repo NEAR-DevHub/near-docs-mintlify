@@ -52,6 +52,16 @@
     "drilldown": true
   },
   "favicon": "assets/favicon.svg",
+  "api": {
+    "openapi": "/openapi.json",
+    "playground": {
+      "display": "interactive"
+    },
+    "examples": {
+      "languages": ["bash", "javascript", "python"],
+      "defaults": "all"
+    }
+  },
   "navigation": {
     "tabs": [
       {
@@ -124,6 +134,14 @@
             "group": "Tutorials",
             "pages": [
               "tutorials/protocol/importing-account"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "protocol/explorer",
+              "tools/cli",
+              "protocol/reference"
             ]
           }
         ]
@@ -356,7 +374,9 @@
           {
             "group": "Reference",
             "pages": [
-              "smart-contracts/contracts-list"
+              "tools/contracts-list",
+              "tools/sdk",
+              "tools/clear-state"
             ]
           }
         ]
@@ -377,6 +397,14 @@
             "pages": [
               "web3-apps/concepts/web-login",
               "web3-apps/concepts/data-types"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "tools/near-api",
+              "tools/cli",
+              "web3-apps/near-connect"
             ]
           },
           {
@@ -543,20 +571,91 @@
         "tab": "RPC API",
         "groups": [
           {
-            "group": "Providers",
+            "group": "Overview",
             "pages": [
-              "api/rpc/providers",
+              "api/rpc/introduction",
               "api/rpc/providers"
             ]
           },
           {
-            "group": "API Reference",
+            "group": "Transactions",
+            "openapi": "/openapi.json",
             "pages": [
-              "api/rpc/providers",
-              "api/rpc/providers"
+              "POST /send_tx",
+              "POST /tx",
+              "POST /broadcast_tx_async",
+              "POST /broadcast_tx_commit",
+              "POST /EXPERIMENTAL_tx_status"
+            ]
+          },
+          {
+            "group": "Blocks & Chunks",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /block",
+              "POST /chunk",
+              "POST /block_effects",
+              "POST /changes",
+              "POST /EXPERIMENTAL_changes_in_block"
+            ]
+          },
+          {
+            "group": "Accounts & Access Keys",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /query",
+              "POST /EXPERIMENTAL_view_account",
+              "POST /EXPERIMENTAL_view_code",
+              "POST /EXPERIMENTAL_view_state",
+              "POST /EXPERIMENTAL_view_access_key",
+              "POST /EXPERIMENTAL_view_access_key_list",
+              "POST /EXPERIMENTAL_call_function",
+              "POST /EXPERIMENTAL_changes",
+              "POST /EXPERIMENTAL_receipt"
+            ]
+          },
+          {
+            "group": "Network",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /status",
+              "POST /health",
+              "POST /network_info",
+              "POST /validators",
+              "POST /EXPERIMENTAL_validators_ordered",
+              "POST /client_config"
+            ]
+          },
+          {
+            "group": "Gas & Config",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /gas_price",
+              "POST /genesis_config",
+              "POST /EXPERIMENTAL_genesis_config",
+              "POST /EXPERIMENTAL_protocol_config",
+              "POST /EXPERIMENTAL_congestion_level"
+            ]
+          },
+          {
+            "group": "Light Client",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /light_client_proof",
+              "POST /next_light_client_block",
+              "POST /EXPERIMENTAL_light_client_proof",
+              "POST /EXPERIMENTAL_light_client_block_proof"
+            ]
+          },
+          {
+            "group": "Maintenance & Storage",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /maintenance_windows",
+              "POST /EXPERIMENTAL_maintenance_windows",
+              "POST /EXPERIMENTAL_split_storage_info"
             ]
           }
-
         ]
       }
     ]
