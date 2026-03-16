@@ -108,17 +108,25 @@ export const ExplainCode = ({ children, languages }) => {
           const idx = Number(entry.target.dataset.blockIdx);
           ratioMap.current[idx] = entry.intersectionRatio;
         });
-        let bestIdx = 0;
-        let bestRatio = -1;
+        let bestIdx = -1;
+        let bestRatio = 0;
         Object.entries(ratioMap.current).forEach(([idx, ratio]) => {
           if (ratio > bestRatio) {
             bestRatio = ratio;
             bestIdx = Number(idx);
           }
         });
-        setActiveBlock(bestIdx);
+        if (bestIdx !== -1) {
+          setActiveBlock(bestIdx);
+        } else {
+          const zoneTop = window.innerHeight * 0.2;
+          const allAboveZone = Object.entries(blockRefs.current)
+            .filter(([, el]) => el)
+            .every(([, el]) => el.getBoundingClientRect().bottom < zoneTop);
+          if (allAboveZone) setActiveBlock(-1);
+        }
       },
-      { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1], rootMargin: '-20% 0px -20% 0px' }
+      { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1], rootMargin: '-20% 0px -50% 0px' }
     );
     observedEls.forEach(([idx, el]) => {
       el.dataset.blockIdx = idx;
@@ -175,7 +183,7 @@ export const ExplainCode = ({ children, languages }) => {
       {/* Two-column layout */}
       <div className="flex gap-8 items-start">
         {/* Left: explanation blocks */}
-        <div className="flex-[5] flex flex-col gap-3 min-w-0">
+        <div className="flex-[5] flex flex-col gap-3 min-w-0 pb-[40vh]">
           {blocks.map((block, i) => (
             <div
               key={i}
