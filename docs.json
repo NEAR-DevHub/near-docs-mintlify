@@ -106,7 +106,7 @@
                       "protocol/transaction-anatomy",
                       "protocol/gas",
                       "protocol/transaction-execution",
-                      "chain-abstraction/meta-transactions"
+                      "chain-abstraction/meta-tx"
                     ],
                     "expanded": false
                   },
@@ -327,6 +327,7 @@
                         ],
                         "expanded": false
                       },
+                      "chain-abstraction/meta-transactions",
                       {
                         "group": "Mastering NEAR",
                         "pages": [
@@ -577,7 +578,11 @@
                     "group": "Overview",
                     "pages": [
                       "api/rpc/introduction",
-                      "api/rpc/providers"
+                      "api/rpc/providers",
+                      "api/rpc/block-chunk",
+                      "api/rpc/gas",
+                      "api/rpc/protocol",
+                      "api/rpc/contracts"
                     ],
                     "expanded": false
                   },
