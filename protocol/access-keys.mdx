@@ -5,11 +5,6 @@ description: "Learn about NEAR's access key system with Full-Access Keys for com
 
 In NEAR, users control their accounts using access keys, which can be full-access keys or function-call keys. Full-access keys allow complete control over the account, while function-call keys restrict actions to specific contracts. This system enables secure sharing of permissions and simplifies user interactions with applications.
 
-<Tip>
-
-Learn more about the benefits of using multiple keys in our blog post: [Benefits of Function-Call Keys](https://docs.near.org/blog/benefits-of-multiple-keys)
-
-</Tip>
 
 ---
 
@@ -38,7 +33,7 @@ They are defined by three attributes:
 2. `method_names` (Optional): The contract's **methods** the key allows to call. If omitted, all contract's methods can be called
 3. `allowance` (Optional): The **amount of NEAR** allowed to be spent on [gas](/protocol/gas). If omitted, the key can consume **unlimited** gas
 
-`Function Call Keys` are meant to be shared with applications, so third-parties can make contract calls in your name. This is useful in [multiple scenarios as we will see below](https://docs.near.org/blog/benefits-of-multiple-keys).
+`Function Call Keys` are meant to be shared with applications, so third-parties can make contract calls in your name. This is useful in multiple scenarios as we will see below.
 
 <Tip>
 `Function-Call` keys are secure to share, as they only permit calls to a specific contract and prohibit NEAR token transfers
