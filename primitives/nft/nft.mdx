@@ -161,7 +161,7 @@ Here is how to directly interact with the factory contract through your applicat
 
 <Info>
 
-See the [metadata standard](https://github.com/near/NEPs/tree/master/neps/nep-0177) for the full list of `TokenMetadata` parameters.
+See the [metadata standard](https://github.com/near/NEPs/tree/master/neps/nep-0177.md) for the full list of `TokenMetadata` parameters.
 
 </Info>
 
@@ -344,7 +344,7 @@ You can query the NFT's information and metadata by calling the `nft_token`.
 ## Transferring a NFT
 Transferring an NFT can happen in two scenarios: (1) you ask to transfer an NFT, and (2) an [authorized account](#approving-users) asks to transfer the NFT.
 
-In both cases, it is necessary to invoke the `nft_transfer` method, indicating the token id, the receiver, and an (optionally) an [approval_id](https://github.com/near/NEPs/tree/master/neps/nep-0178).
+In both cases, it is necessary to invoke the `nft_transfer` method, indicating the token id, the receiver, and an (optionally) an [approval_id](https://github.com/near/NEPs/tree/master/neps/nep-0178.md).
 
 <Tabs>
   <Tab title="🌐 WebApp">
@@ -439,7 +439,7 @@ near call <nft-contract> nft_transfer_call '{"receiver_id": "<receiver-contract>
 
 <Info>
 
-Optionally, a [`memo` parameter](https://github.com/near/NEPs/tree/master/neps/nep-0171#nft-interface) can be passed to provide more information to your contract.
+Optionally, a [`memo` parameter](https://github.com/near/NEPs/tree/master/neps/nep-0171.md#nft-interface) can be passed to provide more information to your contract.
 
 </Info>
 

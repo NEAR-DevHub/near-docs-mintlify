@@ -18,7 +18,7 @@ Be mindful of not confusing an NFT with an NFT-marketplace. NFT simply store inf
 
 ## NEP-171 (NFT Interface)
 
-[NEP-171](https://github.com/near/NEPs/tree/master/neps/nep-0171) is the blueprint for all non-fungible tokens on NEAR. It defines a **common set of rules** and **functions** that the contract MUST implement to be considered a non-fungible token contract.
+[NEP-171](https://github.com/near/NEPs/tree/master/neps/nep-0171.md) is the blueprint for all non-fungible tokens on NEAR. It defines a **common set of rules** and **functions** that the contract MUST implement to be considered a non-fungible token contract.
 
 <Tip>
 
@@ -43,7 +43,7 @@ nft_token(token_id: string): { token_id: string, owner_id: string } | null
 #### `nft_transfer`
 Transfers the `token_id` from the caller to the `receiver_id`, optionally the function can include a `memo` field to provide additional information to the contract
 
-The caller must be the **either** the current owner of the token or an **account** that has been **approved to transfer** the token on behalf of the owner, such as a marketplace contract. The approval mechanism is defined in the [NEP-178 standard](https://github.com/near/NEPs/blob/master/neps/nep-0178).
+The caller must be the **either** the current owner of the token or an **account** that has been **approved to transfer** the token on behalf of the owner, such as a marketplace contract. The approval mechanism is defined in the [NEP-178 standard](https://github.com/near/NEPs/blob/master/neps/nep-0178.md).
 
 > *Requirement: The caller must attach [exactly 1 yoctoNEAR](../../smart-contracts/security/one_yocto) to the call*
 
@@ -95,7 +95,7 @@ nft_resolve_transfer(owner_id: string, receiver_id: string, token_id: string, ap
 
 ## NEP-177 (NFT Metadata)
 
-[NEP-177](https://github.com/near/NEPs/blob/master/neps/nep-0177) is an extension to the NEP-171 standard that defines the **metadata** for both non-fungible tokens and non-fungible token contracts.
+[NEP-177](https://github.com/near/NEPs/blob/master/neps/nep-0177.md) is an extension to the NEP-171 standard that defines the **metadata** for both non-fungible tokens and non-fungible token contracts.
 
 Metadata provides **key information** , such as the contract's **name** or the NFT's **title**. Particularly, the following fields MUST be included in the smart contract and token's metadata:
 
@@ -130,7 +130,7 @@ type TokenMetadata = {
 
 ## NEP-178 (NFT Approval Management)
 
-[NEP-178](https://github.com/near/NEPs/blob/master/neps/nep-0178) is an extension to the NEP-171 standard that defines the **approval management** for non-fungible tokens.
+[NEP-178](https://github.com/near/NEPs/blob/master/neps/nep-0178.md) is an extension to the NEP-171 standard that defines the **approval management** for non-fungible tokens.
 
 The approval mechanism allows the owner of an NFT to authorize another account (for example, a marketplace contract) to transfer the token on their behalf.
 

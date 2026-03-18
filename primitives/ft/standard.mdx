@@ -9,13 +9,13 @@ In contrast with the native token, fungible token (FT) are **not stored** in the
 
 ![FT](/assets/docs/primitives/ft.png)
 
-In order for a contract to be considered a FT contract it has to follow the [**NEP-141**](https://github.com/near/NEPs/tree/master/neps/nep-0141) and [**NEP-148 standards**](https://github.com/near/NEPs/tree/master/neps/nep-0148)which define the **minimum interface** required to be implemented, as well as the expected functionality.
+In order for a contract to be considered a FT contract it has to follow the [**NEP-141**](https://github.com/near/NEPs/tree/master/neps/nep-0141.md) and [**NEP-148 standards**](https://github.com/near/NEPs/tree/master/neps/nep-0148.md)which define the **minimum interface** required to be implemented, as well as the expected functionality.
 
 ---
 
 ## NEP-141 (Fungible Token Interface)
 
-[NEP-141](https://github.com/near/NEPs/tree/master/neps/nep-0141) is the blueprint for all fungible tokens (e.g. stablecoins, governance tokens, etc.) on NEAR.
+[NEP-141](https://github.com/near/NEPs/tree/master/neps/nep-0141.md) is the blueprint for all fungible tokens (e.g. stablecoins, governance tokens, etc.) on NEAR.
 
 It defines a **common set of rules** and **functions** that the contract MUST implement to be considered a fungible token contract.
 
@@ -107,7 +107,7 @@ ft_resolve_transfer(sender_id: string, receiver_id: string, amount: string): str
 
 On NEAR, accounts need to pay for the storage they use on the network. As more users hold tokens on a fungible token contract, more information needs to be stored, and thus the contract needs to reserve more storage.
 
-[NEP-145](https://github.com/near/NEPs/blob/master/neps/nep-0145) is a standard that defines a common interface for registering users, allowing FT contracts to **charge users for the storage they use**.
+[NEP-145](https://github.com/near/NEPs/blob/master/neps/nep-0145.md) is a standard that defines a common interface for registering users, allowing FT contracts to **charge users for the storage they use**.
 
 <Tip>
 
@@ -156,7 +156,7 @@ storage_withdraw(amount: string): { total: string, available: string }
 
 ## NEP-148 (Token Metadata)
 
-[NEP-148](https://github.com/near/NEPs/tree/master/neps/nep-0141) is an extension to the NEP-141 standard that defines the fungible tokens **metadata**.
+[NEP-148](https://github.com/near/NEPs/tree/master/neps/nep-0141.md) is an extension to the NEP-141 standard that defines the fungible tokens **metadata**.
 
 Metadata provides **key information** about the token, such as its **name, symbol, and decimal precision**, particularly, the following fields MUST be included in the token's metadata:
 

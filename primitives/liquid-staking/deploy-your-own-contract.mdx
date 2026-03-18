@@ -3,7 +3,7 @@ title: Deploying Your Own Contract
 description: "Learn how to deploy your own Liquid Staking Contract on NEAR"
 ---
 
-At its core, the Liquid Staking Contract issues a token that follows the [Fungible Token (NEP-141)](https://github.com/near/NEPs/blob/master/neps/nep-0141) standard.
+At its core, the Liquid Staking Contract issues a token that follows the [Fungible Token (NEP-141)](https://github.com/near/NEPs/blob/master/neps/nep-0141.md) standard.
 
 When you stake `NEAR`, you don’t just lock it away — you receive a liquid token (for example, `rNEAR`) that behaves like any other fungible token on the network. You can transfer it, swap it, or use it inside DeFi protocols exactly the same way you would with any other token.
 
@@ -16,7 +16,7 @@ It’s calculated as `exchange_rate = total_staked_near / total_liquid_token_sup
 
 ## Storage Deposit (NEP-145)
 
-Because the liquid staking contract issues a [NEP-141 token](https://github.com/near/NEPs/blob/master/neps/nep-0141), it also implements the [Storage Management (NEP-145)](https://github.com/near/NEPs/blob/master/neps/nep-0145) standard.
+Because the liquid staking contract issues a [NEP-141 token](https://github.com/near/NEPs/blob/master/neps/nep-0141.md), it also implements the [Storage Management (NEP-145)](https://github.com/near/NEPs/blob/master/neps/nep-0145.md) standard.
 
 Whenever you interact with the contract for the first time, for example, when you deposit `NEAR` and get liquid tokens in return, you need to attach a tiny storage deposit. This deposit covers the space your account information takes up in the contract’s storage. The good thing is that this money isn’t spent, it just stays reserved while you’re using the contract. And if you ever stop using it, you can get your deposit back by unregistering your account.
 
@@ -88,7 +88,7 @@ near contract call-function as-transaction <account-id> add_validators json-args
 
 ## Token
 
-In this section, we’ll go through a few of the most commonly used methods. To explore all available methods, please refer to the full definition of [NEP-141](https://github.com/near/NEPs/blob/master/neps/nep-0141).
+In this section, we’ll go through a few of the most commonly used methods. To explore all available methods, please refer to the full definition of [NEP-141](https://github.com/near/NEPs/blob/master/neps/nep-0141.md).
 
 ### Storage Deposit
 
