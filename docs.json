@@ -30,14 +30,6 @@
       }
     }
   },
-  "navbar": {
-    "links": [
-      {
-        "type": "github",
-        "href": "https://github.com/near"
-      }
-    ]
-  },
   "search": {
     "prompt": "Search docs..."
   },
@@ -67,25 +59,42 @@
     }
   },
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Explorers",
+          "href": "https://explorer.near.org/",
+          "icon": "search"
+        },
+        {
+          "anchor": "Wallets",
+          "href": "https://wallet.near.org",
+          "icon": "wallet"
+        },
+        {
+          "anchor": "NEAR Catalog",
+          "href": "https://nearcatalog.xyz/",
+          "icon": "layout-grid"
+        }
+      ]
+    },
     "tabs": [
       {
-        "tab": " ",
+        "tab": "Docs",
+        "icon": "book",
         "groups": [
           {
-            "group": " ",
+            "group": "Getting Started",
             "pages": [
-              {
-                "group": "Home",
-                "icon": "house",
-                "pages": [
-                  "/index",
-                  "protocol/basics",
-                  "create-account",
-                  "faucet",
-                  "tools-for-ai"
-                ],
-                "expanded": false
-              },
+              "protocol/basics",
+              "create-account",
+              "faucet",
+              "tools-for-ai"
+            ]
+          },
+          {
+            "group": "Docs",
+            "pages": [
               {
                 "group": "Protocol",
                 "icon": "layers",
@@ -96,8 +105,7 @@
                       "protocol/account-model",
                       "protocol/account-id",
                       "protocol/access-keys"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Transactions",
@@ -107,31 +115,27 @@
                       "protocol/gas",
                       "protocol/transaction-execution",
                       "chain-abstraction/meta-tx"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Data Flow",
                     "pages": [
                       "protocol/data-flow/near-data-flow",
                       "protocol/data-flow/token-transfer-flow"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Tokens",
                     "pages": [
                       "protocol/network/tokens",
                       "protocol/network/token-loss"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Storage",
                     "pages": [
                       "protocol/storage/storage-staking"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Network",
@@ -141,40 +145,16 @@
                       "protocol/network/networks",
                       "protocol/network/epoch",
                       "protocol/network/runtime"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Tutorials",
-                    "pages": [
-                      "tutorials/protocol/importing-account"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Reference",
-                    "pages": [
-                      "protocol/explorer",
-                      "tools/cli",
-                      "protocol/reference"
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
+                ]
               },
               {
                 "group": "Smart Contracts",
                 "icon": "file-badge",
+                "root": "smart-contracts/what-is",
                 "pages": [
-                  {
-                    "group": "Getting Started",
-                    "pages": [
-                      "smart-contracts/what-is",
-                      "smart-contracts/quickstart"
-                    ],
-                    "expanded": false
-                  },
+                  "smart-contracts/quickstart",
                   {
                     "group": "Concepts",
                     "pages": [
@@ -190,8 +170,7 @@
                           "smart-contracts/anatomy/actions",
                           "smart-contracts/anatomy/crosscontract",
                           "smart-contracts/anatomy/yield-resume"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       "smart-contracts/global-contracts",
                       {
@@ -200,8 +179,7 @@
                           "smart-contracts/release/deploy",
                           "smart-contracts/release/upgrade",
                           "smart-contracts/release/lock"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Advanced",
@@ -211,8 +189,7 @@
                           "smart-contracts/anatomy/serialization-interface",
                           "smart-contracts/anatomy/reduce-size",
                           "smart-contracts/anatomy/reproducible-builds"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Test the Contract",
@@ -220,8 +197,7 @@
                           "smart-contracts/testing/introduction",
                           "smart-contracts/testing/unit-test",
                           "smart-contracts/testing/integration-test"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Security",
@@ -235,11 +211,9 @@
                           "smart-contracts/security/frontrunning",
                           "smart-contracts/security/reentrancy",
                           "smart-contracts/security/random"
-                        ],
-                        "expanded": false
+                        ]
                       }
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Tutorials",
@@ -250,24 +224,21 @@
                         "pages": [
                           "tutorials/examples/near-drop",
                           "tutorials/examples/update"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Cross Contracts",
                         "pages": [
                           "tutorials/examples/xcc",
                           "tutorials/examples/advanced-xcc"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Factories",
                         "pages": [
                           "tutorials/examples/factory",
                           "tutorials/examples/global-contracts"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "Zero to Hero",
@@ -275,43 +246,24 @@
                           "tutorials/fts",
                           "tutorials/nfts",
                           "tutorials/nfts-js"
-                        ],
-                        "expanded": false
+                        ]
                       }
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Reference",
-                    "pages": [
-                      "tools/contracts-list",
-                      "tools/sdk",
-                      "tools/clear-state"
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
+                ]
               },
               {
                 "group": "App Development",
                 "icon": "terminal",
+                "root": "web3-apps/what-is",
                 "pages": [
-                  {
-                    "group": "Getting Started",
-                    "pages": [
-                      "web3-apps/what-is",
-                      "web3-apps/quickstart"
-                    ],
-                    "expanded": false
-                  },
+                  "web3-apps/quickstart",
                   {
                     "group": "Concepts",
                     "pages": [
                       "web3-apps/concepts/web-login",
                       "web3-apps/concepts/data-types"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Tutorials",
@@ -324,8 +276,7 @@
                         "pages": [
                           "web3-apps/tutorials/localnet/introduction",
                           "web3-apps/tutorials/localnet/run"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       "chain-abstraction/meta-transactions",
                       {
@@ -338,16 +289,14 @@
                               "tutorials/auction/1.1-basic",
                               "tutorials/auction/1.2-testing",
                               "tutorials/auction/1.3-deploy"
-                            ],
-                            "expanded": false
+                            ]
                           },
                           {
                             "group": "Frontends 101",
                             "pages": [
                               "tutorials/auction/2.1-frontend",
                               "tutorials/auction/2.2-indexing"
-                            ],
-                            "expanded": false
+                            ]
                           },
                           {
                             "group": "Using Primitives",
@@ -355,39 +304,20 @@
                               "tutorials/auction/3.1-nft",
                               "tutorials/auction/3.2-ft",
                               "tutorials/auction/3.3-new-frontend"
-                            ],
-                            "expanded": false
+                            ]
                           },
                           "tutorials/auction/4-factory"
-                        ],
-                        "expanded": false
+                        ]
                       }
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Reference",
-                    "pages": [
-                      "tools/near-api",
-                      "tools/cli",
-                      "web3-apps/near-connect"
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
+              ]
               },
               {
                 "group": "Multi-Chain",
                 "icon": "link-2",
+                "root": "chain-abstraction/what-is",
                 "pages": [
-                  {
-                    "group": "Overview",
-                    "pages": [
-                      "chain-abstraction/what-is"
-                    ],
-                    "expanded": false
-                  },
                   {
                     "group": "Multi-Chain Accounts",
                     "pages": [
@@ -402,8 +332,7 @@
                               "tutorials/controlling-near-accounts/0-introduction",
                               "tutorials/controlling-near-accounts/1-setup",
                               "tutorials/controlling-near-accounts/2-transfer"
-                            ],
-                            "expanded": false
+                            ]
                           },
                           {
                             "group": "Cross-Chain DAO Governance",
@@ -412,22 +341,13 @@
                               "tutorials/multichain-dao/1-request",
                               "tutorials/multichain-dao/2-signing",
                               "tutorials/multichain-dao/3-voting"
-                            ],
-                            "expanded": false
+                            ]
                           }
-                        ],
-                        "expanded": false
+                        ]
                       }
-                    ],
-                    "expanded": false
+                    ]
                   },
-                  {
-                    "group": "Intents",
-                    "pages": [
-                      "chain-abstraction/intents/overview"
-                    ],
-                    "expanded": false
-                  },
+                  "chain-abstraction/intents/overview",
                   {
                     "group": "Multi-Chain Bridge",
                     "pages": [
@@ -435,31 +355,22 @@
                       "chain-abstraction/omnibridge/how-it-works",
                       "chain-abstraction/omnibridge/implementation",
                       "chain-abstraction/omnibridge/roadmap"
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
+                ]
               },
               {
                 "group": "Tokens & Primitives",
                 "icon": "coins",
+                "root": "primitives/what-is",
                 "pages": [
-                  {
-                    "group": "Primitives",
-                    "pages": [
-                      "primitives/what-is"
-                    ],
-                    "expanded": false
-                  },
                   {
                     "group": "Fungible Tokens (FT)",
                     "pages": [
                       "primitives/ft/standard",
                       "primitives/ft/ft",
                       "primitives/ft/sdk-contract-tools"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Non-Fungible Tokens (NFT)",
@@ -467,23 +378,20 @@
                       "primitives/nft/standard",
                       "primitives/nft/nft",
                       "primitives/nft/sdk-contract-tools"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Linkdrops",
                     "pages": [
                       "primitives/linkdrop/standard",
                       "primitives/linkdrop/linkdrop"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Staking",
                     "pages": [
                       "protocol/network/staking"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "DeFi",
@@ -491,49 +399,38 @@
                       "primitives/oracles",
                       "primitives/dao",
                       "primitives/dex"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Identity",
                     "pages": [
                       "primitives/didnear"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Lockup Contracts",
                     "pages": [
                       "primitives/lockup/introduction",
                       "primitives/lockup/lockup"
-                    ],
-                    "expanded": false
+                    ]
                   },
                   {
                     "group": "Liquid Staking",
                     "pages": [
                       "primitives/liquid-staking/liquid-staking",
                       "primitives/liquid-staking/deploy-your-own-contract"
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
+                ]
               },
               {
                 "group": "Data Infrastructure",
                 "icon": "database",
+                "root": "data-infrastructure/what-is",
                 "pages": [
-                  {
-                    "group": "Overview",
-                    "pages": [
-                      "data-infrastructure/what-is",
-                      "data-infrastructure/data-services",
-                      "data-infrastructure/data-api",
-                      "data-infrastructure/big-query"
-                    ],
-                    "expanded": false
-                  },
+                  "data-infrastructure/data-services",
+                  "data-infrastructure/data-api",
+                  "data-infrastructure/big-query",
                   {
                     "group": "Indexers",
                     "pages": [
@@ -544,8 +441,7 @@
                           "data-infrastructure/near-lake-framework",
                           "data-infrastructure/tutorials/near-lake-framework",
                           "data-infrastructure/tutorials/near-lake-state-changes-indexer"
-                        ],
-                        "expanded": false
+                        ]
                       },
                       {
                         "group": "NEAR Indexer",
@@ -558,123 +454,156 @@
                               "data-infrastructure/tutorials/running-near-lake/run-near-lake",
                               "data-infrastructure/tutorials/running-near-lake/lake-start-options",
                               "data-infrastructure/tutorials/running-near-lake/credentials"
-                            ],
-                            "expanded": false
+                            ]
                           }
-                        ],
-                        "expanded": false
+                        ]
                       }
-                    ],
-                    "expanded": false
+                    ]
                   }
-                ],
-                "expanded": false
-              },
-              {
-                "group": "RPC API",
-                "icon": "code",
-                "pages": [
-                  {
-                    "group": "Overview",
-                    "pages": [
-                      "api/rpc/introduction",
-                      "api/rpc/providers",
-                      "api/rpc/block-chunk",
-                      "api/rpc/gas",
-                      "api/rpc/protocol",
-                      "api/rpc/contracts"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Transactions",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /send_tx",
-                      "POST /tx",
-                      "POST /broadcast_tx_async",
-                      "POST /broadcast_tx_commit",
-                      "POST /EXPERIMENTAL_tx_status"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Blocks & Chunks",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /block",
-                      "POST /chunk",
-                      "POST /block_effects",
-                      "POST /changes",
-                      "POST /EXPERIMENTAL_changes_in_block"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Accounts & Access Keys",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /query",
-                      "POST /EXPERIMENTAL_view_account",
-                      "POST /EXPERIMENTAL_view_code",
-                      "POST /EXPERIMENTAL_view_state",
-                      "POST /EXPERIMENTAL_view_access_key",
-                      "POST /EXPERIMENTAL_view_access_key_list",
-                      "POST /EXPERIMENTAL_call_function",
-                      "POST /EXPERIMENTAL_changes",
-                      "POST /EXPERIMENTAL_receipt"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Network",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /status",
-                      "POST /health",
-                      "POST /network_info",
-                      "POST /validators",
-                      "POST /EXPERIMENTAL_validators_ordered",
-                      "POST /client_config"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Gas & Config",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /gas_price",
-                      "POST /genesis_config",
-                      "POST /EXPERIMENTAL_genesis_config",
-                      "POST /EXPERIMENTAL_protocol_config",
-                      "POST /EXPERIMENTAL_congestion_level"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Light Client",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /light_client_proof",
-                      "POST /next_light_client_block",
-                      "POST /EXPERIMENTAL_light_client_proof",
-                      "POST /EXPERIMENTAL_light_client_block_proof"
-                    ],
-                    "expanded": false
-                  },
-                  {
-                    "group": "Maintenance & Storage",
-                    "openapi": "/openapi.json",
-                    "pages": [
-                      "POST /maintenance_windows",
-                      "POST /EXPERIMENTAL_maintenance_windows",
-                      "POST /EXPERIMENTAL_split_storage_info"
-                    ],
-                    "expanded": false
-                  }
-                ],
-                "expanded": false
+                ]
               }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Dev ToolKit",
+        "icon": "tool-case",
+        "groups": [
+          {
+            "group": "Applications",
+            "pages": [
+              "web3-apps/near-connect",
+              "tools/near-api",
+              "tools/cli"
+            ]
+          },
+          {
+            "group": "Smart Contracts",
+            "pages": [
+              "tools/sdk",
+              "tools/contracts-list",
+              "tools/clear-state"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "RPC API",
+        "icon": "server",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api/rpc/introduction",
+              "api/rpc/providers",
+              "api/rpc/block-chunk",
+              "api/rpc/gas",
+              "api/rpc/protocol",
+              "api/rpc/contracts"
+            ]
+          },
+          {
+            "group": "Query",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /query"
+            ]
+          },
+          {
+            "group": "Transactions",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /send_tx",
+              "POST /tx",
+              "POST /EXPERIMENTAL_tx_status",
+              "POST /EXPERIMENTAL_receipt",
+              "POST /broadcast_tx_async",
+              "POST /broadcast_tx_commit"
+            ]
+          },
+          {
+            "group": "Accounts",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /EXPERIMENTAL_view_account",
+              "POST /changes",
+              "POST /EXPERIMENTAL_changes"
+            ]
+          },
+          {
+            "group": "Access Keys",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /EXPERIMENTAL_view_access_key_list",
+              "POST /EXPERIMENTAL_view_access_key"
+            ]
+          },
+          {
+            "group": "Smart Contracts",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /EXPERIMENTAL_view_code",
+              "POST /EXPERIMENTAL_view_state",
+              "POST /EXPERIMENTAL_call_function"
+            ]
+          },
+          {
+            "group": "Gas Price",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /gas_price"
+            ]
+          },
+          {
+            "group": "Blocks & Chunks",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /block",
+              "POST /chunk",
+              "POST /block_effects",
+              "POST /EXPERIMENTAL_changes_in_block"
+            ]
+          },
+          {
+            "group": "Network",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /status",
+              "POST /health",
+              "POST /network_info",
+              "POST /validators",
+              "POST /client_config",
+              "POST /EXPERIMENTAL_validators_ordered"
+            ]
+          },
+          {
+            "group": "Gas & Config",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /EXPERIMENTAL_protocol_config",
+              "POST /genesis_config",
+              "POST /EXPERIMENTAL_genesis_config",
+              "POST /EXPERIMENTAL_congestion_level"
+            ]
+          },
+          {
+            "group": "Light Client",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /light_client_proof",
+              "POST /next_light_client_block",
+              "POST /EXPERIMENTAL_light_client_proof",
+              "POST /EXPERIMENTAL_light_client_block_proof"
+            ]
+          },
+          {
+            "group": "Maintenance & Storage",
+            "openapi": "/openapi.json",
+            "pages": [
+              "POST /maintenance_windows",
+              "POST /EXPERIMENTAL_maintenance_windows",
+              "POST /EXPERIMENTAL_split_storage_info"
             ]
           }
         ]

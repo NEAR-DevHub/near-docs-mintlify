@@ -8,37 +8,45 @@ NEAR Intents is a multichain transaction protocol where users specify what they 
 
 ![NEAR Intents Overview](/assets/docs/chain-abstraction/intents-overview.png)
 
+<Card title="Read Intents Docs" icon="book-open" href="https:docs.near-intents.org">
+ Read the official documentation to learn more about NEAR Intents and how to use it
+</Card>
+
+---
+
 ## How It Works
 
-1. **Intent Creation**: A user or AI agent expresses a desired outcome _(ex: Swap Token A for Token B)_ and broadcasts the intent to network of Market Makers (also called Solvers).
+<Steps>
+<Step title="Intent Creation">
+A user or AI agent expresses a desired outcome _(ex: Swap Token A for Token B)_ and broadcasts the intent to network of Market Makers (also called Solvers).
 
-2. **Market Makers Compete**: An off-chain decentralized network of Market Makers (aka solvers) compete to fulfill the request in the most optimal way. When the network finds the best solution, it presents it as a quote to the originating user/agent for approval.
+</Step>
+<Step title="Market Maker Competition">
 
-4. **Intent Execution**: If the quote from the Market Maker is accepted, the intent is executed by calling a "Verifier" smart contract on NEAR Protocol. This contract securely verifies and settles the final transaction.
+An off-chain decentralized network of Market Makers (aka solvers) compete to fulfill the request in the most optimal way. When the network finds the best solution, it presents it as a quote to the originating user/agent for approval.
 
-## NEAR Intents 101
+</Step>
+<Step title="Intent Execution">
+If the quote from the Market Maker is accepted, the intent is executed by calling a "Verifier" smart contract on NEAR Protocol. This contract securely verifies and settles the final transaction.
 
-An introduction to NEAR Intents core concepts and how it works.
+</Step>
+</Steps>
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/mOGD2gzZJqE" title="NEAR Intents 101" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## NEAR Intents 102
-
-A step-by-step workshop on how to perform token swaps use NEAR Intents 1Click API.
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/U8ngm2hR4a4" title="NEAR Intents 102" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+---
 
 ## Resources
 
-Here are some resources to get started using NEAR Intents:
-
-- [Official NEAR Intents Documentation](https://docs.near-intents.org)
-- [Dev Support Channel](https://t.me/near_intents): Developer support channel on Telegram
-- [NEAR Intents 1Click API Example](https://github.com/near-examples/near-intents-examples): Easy integration example that uses 1Click API
-- [near-intents.org (Live Site)](https://near-intents.org): Live demo application showcasing token swaps
-- [near-intents.org (Repository)](https://github.com/defuse-protocol/defuse-frontend): Frontend source code for `near-intents.org`
-- [Unpacking NEAR Intents: A Deep Dive](https://www.near.org/blog/unpacking-near-intents-a-deep-dive): Blogpost diving deeper into the concept of NEAR Intents.
-
-<Info>
-Currently there is no `testnet` deployment.
-</Info>
+<CardGroup cols={2}>
+	<Card title="Official NEAR Intents Documentation" icon="book-open" href="https://docs.near-intents.org">
+		Read the official documentation to learn more about NEAR Intents.
+	</Card>
+	<Card title="Dev Support Channel" icon="message-circle" href="https://t.me/near_intents">
+		Join the Telegram developer support channel.
+	</Card>
+	<Card title="Integration Example" icon="code" href="https://github.com/near-examples/near-intents-examples">
+		Explore an easy integration example that uses the 1Click API.
+	</Card>
+	<Card title="near-intents.org (Live Site)" icon="globe" href="https://near-intents.org">
+		Try the live demo application showcasing token swaps.
+	</Card>
+</CardGroup>

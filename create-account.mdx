@@ -1,5 +1,6 @@
 ---
-title: Create a NEAR Account
+title: Create an Account
+icon: user-plus
 description: "Understand how to create a NEAR account using a wallet and the NEAR CLI"
 ---
 
@@ -12,7 +13,7 @@ You can create a `testnet` NEAR account through one of the following methods:
 
 <Tip>
 
-If you already have a NEAR account and want to use it in another wallet or the CLI, check out our guide on [Importing a NEAR Account](/tutorials/protocol/importing-account)
+If you already have a NEAR account, you can import it into another wallet or the CLI. See [Importing Existing Accounts](#importing-existing-accounts) below.
 
 </Tip>
 
@@ -82,6 +83,40 @@ near create-account <account.testnet> --useFaucet
 ```
 
 This command will create a new account with the name `<account.testnet>` and fund it using the `testnet` faucet. Make sure to replace `<account.testnet>` with your desired account name.
+
+---
+
+## Importing Existing Accounts
+
+If you want to use an existing NEAR account in another wallet or in the CLI, you can import it using your seed phrase or private key.
+
+<Accordion title="1. Export your seed phrase or private key">
+From your current wallet, use its account backup/export flow.
+
+If the account was created with the CLI, run:
+
+```bash
+near account export-account <account.testnet>
+```
+</Accordion>
+
+<Accordion title="2. Import into a wallet">
+In your destination wallet, choose the account import/restore option and provide your seed phrase.
+</Accordion>
+
+<Accordion title="3. Import into the CLI">
+Run:
+
+```bash
+near account import-account
+```
+
+Then follow the prompts to enter your seed phrase or private key.
+</Accordion>
+
+<Warning>
+Keep your seed phrase and private key secure. Anyone with access to them can control your account.
+</Warning>
 
 ---
 
