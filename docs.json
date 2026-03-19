@@ -468,7 +468,7 @@
       },
       {
         "tab": "Dev ToolKit",
-        "icon": "tool-case",
+        "icon": "code",
         "groups": [
           {
             "group": "Applications",
