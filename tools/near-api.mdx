@@ -132,7 +132,7 @@ Get basic account information, such as its code hash and storage usage.
 
 ### Create Named Account
 
-To create a named account like `user.testnet`, you need to call the `create_account` function on `near` (or `testnet`), passing as parameters the new account ID, and a public key to add as [FullAccess key](/protocol/access-keys#full-access-keys).
+To create a named account like `user.testnet`, you need to call the `create_account` function on `near` (or `testnet`), passing as parameters the new account ID, and a public key to add as [FullAccess key](/protocol/accounts-contracts/access-keys#full-access-keys).
 
 <Tabs>
   <Tab title="🌐 near-api-js">
@@ -362,7 +362,7 @@ A smart contract exposes its methods, and making a function call that modifies s
 
 ### Batch Actions
 
-You can send multiple [actions](/protocol/transaction-anatomy#actions) in a batch to a **single** receiver. If one action fails then the entire batch of actions will be reverted.
+You can send multiple [actions](/protocol/transactions/transaction-anatomy#actions) in a batch to a **single** receiver. If one action fails then the entire batch of actions will be reverted.
 
 <Tabs>
   <Tab title="🌐 near-api-js">
@@ -729,7 +729,7 @@ View functions are read-only methods on a smart contract that do not modify stat
 
 ### Add Full Access Key
 
-A [Full Access key](/protocol/access-keys#full-access-keys) grants complete control over the account.
+A [Full Access key](/protocol/accounts-contracts/access-keys#full-access-keys) grants complete control over the account.
 
 Anyone with this key can transfer funds, sign transactions, interact with contracts, or even delete the account entirely.
 
@@ -765,7 +765,7 @@ Anyone with this key can transfer funds, sign transactions, interact with contra
 
 ### Add Function Call Key
 
-A [Function Call access key](/protocol/access-keys#function-call-keys) is designed specifically to sign transactions that include only [`functionCall` actions](/protocol/transaction-anatomy#actions) to a specific contract.
+A [Function Call access key](/protocol/accounts-contracts/access-keys#function-call-keys) is designed specifically to sign transactions that include only [`functionCall` actions](/protocol/transactions/transaction-anatomy#actions) to a specific contract.
 
 You can further restrict this key by:
 - Limiting which method names can be called

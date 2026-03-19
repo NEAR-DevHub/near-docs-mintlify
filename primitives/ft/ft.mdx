@@ -507,7 +507,7 @@ If you want your contract to handle deposit in FTs you have to implement the `ft
 
 The `ft_on_transfer` must return how many FT tokens have to **be refunded**, so the FT contract gives them back to the sender.
 
-Here is an example from our [auctions tutorial](../../tutorials/auction/3.2-ft) where we implement `ft_on_transfer` to handle bids in FTs:
+Here is an example from our [auctions tutorial](../../web3-apps/tutorials/mastering-near/3.2-ft) where we implement `ft_on_transfer` to handle bids in FTs:
 
 <Github fname="lib.rs" language="rust"
         url="https://github.com/near-examples/auctions-tutorial/blob/main/contract-rs/03-bid-with-fts/src/lib.rs#L56-L87"
@@ -559,4 +559,4 @@ While the FT standard does not define a `burn` method, you can simply transfer t
 2. [NEP-148 standard](https://github.com/near/NEPs/tree/master/neps/nep-0148.md)
 3. [FT Event Standards](https://github.com/near/NEPs/blob/master/neps/nep-0300.md)
 4. [FT reference implementation](https://github.com/near-examples/FT)
-5. [Fungible Tokens 101](../../tutorials/fts) - a set of tutorials that cover how to create a FT contract using Rust.
+5. [Fungible Tokens 101](../../smart-contracts/tutorials/zero-to-hero/fts) - a set of tutorials that cover how to create a FT contract using Rust.
